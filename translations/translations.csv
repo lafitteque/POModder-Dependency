@@ -1,0 +1,289 @@
+keys,en,fr,es
+loadout.achievements.title,Achievements,Succès,Logros
+,,,
+achievement.shield_strong.title,Ready for battle ,Prêt au combat,
+achievement.resources_cobaltstack.title,Hoarder ,Amasseur,
+achievement.resources_cobaltrescue.title,My Savior ,Mon sauveur,
+achievement.repellent_bigdelay.title,Take your time ,Prenez votre temps,
+achievement.relichunt_speedy.title,Quick Finish ,Fin rapide,
+achievement.prestige_win.title,My name shall be known ,Connu de tous,
+achievement.prestige_multiplier.title,Compounding interest ,Avec des intérêts,
+achievement.prestige_chunk.title,Bringing home the big bucks ,Gros budget,
+achievement.pet_found.title,Find a friend ,Un nouvel ami,
+achievement.orchard_long.title,Rich in Fiber ,Riche en fibre,
+achievement.mine_all.title,Thorough ,Avec ordre et méthode,
+achievement.lift_jam.title,We're gonna need a bigger lift ,Il faudrait un plus gros monte-charge,
+achievement.lift_transport.title,My good mule ,Chargé comme un mulet,
+achievement.keeper_timely.title,Precisely when I meant to ,Excellent timing,
+achievement.keeper_bottom.title,Deep and Greedy ,Tout en bas,
+achievement.keeper_marathon.title,Half marathon ,Demi-marathon,
+achievement.keeper2_sphereduration.title,Perfect Placement ,Placement parfait,
+achievement.keeper2_reflections.title,Solitaire Pong ,Pong solitaire,
+achievement.keeper2_ammo.title,Full Clip ,Chargeur rempli,
+achievement.keeper2_bigbundle.title,Bulky Goods ,Livraison en gros,
+achievement.keeper1_speed.title,The Need for Speed ,À fond la caisse,
+achievement.keeper1_shoppingbag.title,Shopping Bag Conundrum ,Plein à craquer,
+achievement.dome_lowhealth.title,Close call ,Au plus juste,
+achievement.drillbert_treat.title,Doping ,Dopage,
+achievement.converter_use.title,Transmogrification ,Transmogrification,
+achievement.blastmining_use.title,Earth shattering ,Et que ça saute !,
+achievement.condenser_use.title,Waterworld ,Un monde d’eau,
+achievement.relichunt_relictaken.title,Gifts from the past ,Dons du passé,
+achievement.keeper2_explode.title,Hat Trick ,Coup du chapeau,
+achievement.keeper2_splits.title,Great-Great-Grandspheres ,Arrière-arrière-grandes sphères,
+achievement.relichunt_mapsmall.title,Bite sized ,Amuse-gueule,
+achievement.relichunt_mapmedium.title,The regular,La routine,
+achievement.relichunt_maplarge.title,The deep end ,Jusqu’au bout,
+achievement.relichunt_beatfinale.title,I came prepared ,Prêt à tout,
+achievement.world3_unlock.title,Land of the behemoth ,Terre des titans,
+achievement.world2_unlock.title,Land of the orbs ,Terre des orbes,
+achievement.world4_unlock.title,Land of the stalks ,Terre des tiges,
+achievement.world5_unlock.title,Land of the Spores ,Terre des spores,
+achievement.dome2_unlock.title,Stick them with the pointy end ,Attention à la pointe !,
+achievement.prestige_unlock.title,A keeper of status ,Statut social,
+achievement.keeper2_unlock.title,Master of gravity ,Maître de la gravité,
+achievement.shield_complete.title,Shield Completed ,Bouclier terminé,
+achievement.repellent_complete.title,Repellent Completed,Monstrifuge terminé,
+achievement.orchard_complete.title,Canopy ,Verger terminé,
+achievement.run_losemany.title,Learning opportunity ,Apprentissage,
+achievement.run_winmany.title,Veteran Keeper ,Gardien vétéran,
+,,,
+achievement.shield_strong.desc,Have 200 or more shield hp ready. ,Avoir pour au moins 200 PV de boucliers.,
+achievement.resources_cobaltstack.desc,Hoard 8 cobalt. ,Amasser 8 unités de cobalt.,
+achievement.resources_cobaltrescue.desc,Find a cobalt while having none stored and the dome being under 10% health. ,Trouver 1 unité de cobalt alors que vous n’en avez pas en stock et que le dôme a moins de 10 % de solidité.,
+achievement.repellent_bigdelay.desc,Delay a wave by more than 0.5 cycles. ,"Retarder une vague de plus de 0,5 cycles.",
+achievement.relichunt_speedy.desc,Retrieve the relic within 20 minutes. ,Récupérer la relique en moins de 20 minutes. ,
+achievement.prestige_win.desc,Win a prestige run with 1 000 points or more. ,Remporter une partie prestige avec 1 000 points ou plus.,
+achievement.prestige_multiplier.desc,Reach a prestige multiplier of 10 in endless mode. ,Atteindre un multiplicateur de prestige de 10.,
+achievement.prestige_chunk.desc,Gain 200 prestige in one wave. ,Gagner 200 en prestige en une seule vague,
+achievement.pet_found.desc,Hatch the mysterious egg. ,Faire éclore l’œuf mystérieux.,
+achievement.orchard_long.desc,Consume a fruit that buffs you for at least 0.9 cycles. ,"Consommer un fruit qui vous confère un buff pendant au moins 0,9 cycle.",
+achievement.mine_all.desc,Mine every block. ,Creuser tous les blocs,
+achievement.lift_jam.desc,Have 80 resources hanging in the lift. ,Mettre 80 ressources dans le monte-charge.,
+achievement.lift_transport.desc,Have the lift transport 200 resources in one run ,Faire transporter 200 ressources par le monte-charge au cours d’une seule et même partie.,
+achievement.keeper_timely.desc,Enter the dome the second the battle starts. ,Entrer à l’intérieur du dôme pile au début du combat.,
+achievement.keeper_bottom.desc,Reach depth 100. ,Atteindre une profondeur de 100.,
+achievement.keeper_marathon.desc,Travel half the length of a Marathon in one run. ,Parcourir la moitié d’un marathon au cours d’une seule et même partie.,
+achievement.keeper2_sphereduration.desc,"Have a sphere fly for 23s or more, without reflecting it as the Assessor. ",Faire en sorte qu’une sphère vole pendant au moins 23 secondes sans la renvoyer en tant qu’assesseur.,
+achievement.keeper2_reflections.desc,Reflect a sphere 40 times in a row as the Assessor. ,Renvoyer une sphère 40 fois de suite en tant qu’assesseur.,
+achievement.keeper2_ammo.desc,Have 6 spheres ready to fire as the Assessor. ,Avoir 6 sphères prêtes à tirer en tant qu’assesseur.,
+achievement.keeper2_bigbundle.desc,Shoot a bundle of at least 25 resources as the Assessor. ,Tirer sur un lot d’au moins 25 ressources en tant qu’assesseur.,
+achievement.keeper1_speed.desc,Reach a speed of 200 with the engineer. ,Atteindre une vitesse de 200 avec l’ingénieur.,
+achievement.keeper1_shoppingbag.desc,Carry 20 resources back to the dome in one go. ,Remonter 20 ressources au dôme d’un seul coup.,
+achievement.dome_lowhealth.desc,Survive a battle with 1% health left. ,Survivre à un combat en n’ayant plus que 1 % de santé.,
+achievement.drillbert_treat.desc,Feed 10 treats to Drillbert in one run. ,Donner 10 friandises à Creusetout au cours d’une seule et même partie.,
+achievement.converter_use.desc,Perform 10 conversions in one run. ,Effctuer 10 conversions au cours d’une seule et même partie.,
+achievement.blastmining_use.desc,Use 15 blast charges in one run. ,Utiliser 15 charges explosives au cours d’une seule et même partie.,
+achievement.condenser_use.desc,Produce 10 water with the condenser in one run. ,Produire 10 volumes d’eau à l’aide du condensateur au cours d’une seule et même partie.,
+achievement.relichunt_relictaken.desc,Retrieve a relic. ,Récupérer une relique.,
+achievement.keeper2_explode.desc,Explode 3 spheres with one activation as the Assessor. ,Faire exploser 3 sphères au cours d’une seule activation en tant qu’assesseur.,
+achievement.keeper2_splits.desc,Split a sphere into the 5th generation as the Assessor. ,Scinder une sphère jusqu’à la 5e génération en tant qu’assesseur.,
+achievement.relichunt_mapsmall.desc,Complete relic hunt on a large map. ,Réussir une chasse à la relique sur une petite carte.,
+achievement.relichunt_mapmedium.desc,Complete relic hunt on a medium sized map. ,Réussir une chasse à la relique sur une carte de taille moyenne.,
+achievement.relichunt_maplarge.desc,Complete relic hunt on a small map. ,Réussir une chasse à la relique sur une grande carte.,
+achievement.relichunt_beatfinale.desc,"After retrieving the relic, beat the final wave without the help of the relic bomb. ","Après avoir récupéré la relique, vaincre la dernière vague sans déclancher la bombe à reliques.",
+achievement.world3_unlock.desc,Unlock the behemoth world. ,Débloquer la terre des titans.,
+achievement.world2_unlock.desc,Unlock the orb world. ,Débloquer la terre des orbes.,
+achievement.world4_unlock.desc,Unlock the stalk world. ,Débloquer la terre des tiges,
+achievement.world5_unlock.desc,Unlock the mushroom world. ,Débloquer le monde des champignons,
+achievement.dome2_unlock.desc,Unlock the sword dome. ,Débloquer le dôme épée.,
+achievement.prestige_unlock.desc,Unlock the prestige mode. ,Débloquer le mode prestige ,
+achievement.keeper2_unlock.desc,Unlock the Assessor. ,Débloquer l’assesseur.,
+achievement.shield_complete.desc,Unlock every battle ability of the shield. ,Débloquer toutes les capacités de combat du bouclier,
+achievement.repellent_complete.desc,Unlock every battle ability of the repellent. ,Débloquer toutes les capacités de combat du monstrifuge.,
+achievement.orchard_complete.desc,Unlock every battle ability of the orchard. ,Débloquer toutes les capacités de combat du verger.,
+achievement.run_losemany.desc,Lose 10 runs. ,Perdre 10 parties,
+achievement.run_winmany.desc,Win 10 runs. ,Remporter 10 parties.,
+,,,
+,,,
+achievement.mine_loadout.title,I needed to be sure,Je devais m’en assurer,Necesitaba saber
+achievement.mine_loadout.desc,Break all the resources in the training area.,Détruire toutes les ressources de la zone d’entraînement. ,Destruir todos los recursos del area de entrenamiento.
+achievement.mine_loadout.hint,You need more mining training.,Vous avez besoin de plus d’entraînement au minage.,Necesitas entrenar más la excavación.
+,,,
+achievement.useless_explosion.title,Sniper bomber,Sniper bombardier,Francotirador bombardero
+achievement.useless_explosion.desc,Break only one bloc with a bomb.,Casser un seul bloc avec une bombe.,Romper un solo bloque con una bomba.
+achievement.useless_explosion.hint,Aim precisely and wait.,Visez précisément et attendez.,Apunta precisamente y espera.
+,,,
+achievement.fast_why.title,Slow and steady wins the race,Tout vient à point à qui sait attendre,El tiempo es oro pero me pagan
+achievement.fast_why.desc,Move slowly without rest for 500 m.,Se déplacer lentement sans s’arrêter sur 500 m.,Moverse despacio sobre 500 m sin pararse.
+achievement.fast_why.hint,"It’s not that heavy, keep going !","Ce n’est pas si lourd, continue !","No pesa tanto, continua !"
+,,,
+achievement.relic_wait.title,The end is never the end…,Ce n’est pas fini…,No ha acabado.
+achievement.relic_wait.desc,"In difficult mode, survive 5 minutes after uncovering the relic.","En mode difficile, survivre 5 minutes après avoir révélé la relique.","En modo dificil, sobrevive 5 minutos despues de haber desvelado la reliquia."
+achievement.relic_wait.hint,What a beatiful relic. Why move it ?,Quelle belle relique. Pourquoi la déplacer ?,Que bonita reliquia. Porque moverla ?
+,,,
+achievement.all_domes_engineer.title,Finished with a jetpack,Terminé avec un jetpack,Acabado con un jetpack
+achievement.all_domes_engineer.desc,Finish a run with each dome with the engineer (Relic Hunt),Finir une partie avec chaque dôme et l’ingénieur (Chasse à la relique),Acabar una partida con cada cúpula y el ingeniero (Cacería de reliquia).
+achievement.all_domes_engineer.hint,Completion.,Complétion.,Compleción.
+,,,
+achievement.all_domes_engineer2.title,Core and jetpack love,Amour des nouaux et jetpacks,Amor de los jetpacks y nucleos
+achievement.all_domes_engineer2.desc,Finish a run with each dome with the engineer (Core Saver),Finir une partie avec chaque dôme et l’ingénieur (Sauveteur de noyau),Acabar una partida con cada cupula y el ingeniero (Socorrista de nucleo).
+achievement.all_domes_engineer2.hint,Completion.,Complétion.,Compleción.
+,,,
+achievement.all_domes_assessor.title,Floating finish,Fin flotante,Final flotante
+achievement.all_domes_assessor.desc,Finish a run with each dome with the assessor (Relic Hunt),Finir une partie avec chaque dôme et l’assesseur (Chasse à la relique),Acabar una partida con cada cupula y el asesor (Cacería de reliquia).
+achievement.all_domes_assessor.hint,Completion.,Complétion.,Compleción.
+,,,
+achievement.all_domes_assessor2.title,Floating core,Noyau flotant,Núcleo flotante
+achievement.all_domes_assessor2.desc,Finish a run with each dome with the assessor (Core Saver),Finir une partie avec chaque dôme et l’assesseur (Sauveteur de noyau),Acabar una partida con cada cupula y el asesor (Socorrista de núcleo).
+achievement.all_domes_assessor2.hint,Completion.,Complétion.,Compleción.
+,,,
+achievement.core_eater_ending.title,It seemed so innocent…,Il avait l’air si innocent…,Parecía tan inocente…
+achievement.core_eater_ending.desc,End a Core Saver run by feeding the Core Eater.,Terminer une partie de Sauveteur de noyau en nourrissant le gobeur de noyau.,Completa una partida de Socorrista de núcleo dándole de comer al Comenúcleo.
+achievement.core_eater_ending.hint,Completion.,Complétion.,Compleción.
+,,,
+achievement.secret_ending.title,Another option,Une autre option,Otra opción
+achievement.secret_ending.desc,End a Core Saver run with the help of the root.,Terminer une partie de Sauveteur de noyau à l’aide de la racine.,Completa una partida de Socorrista de nucleo con la ayuda de la raiz.
+achievement.secret_ending.hint,Completion.,Complétion.,Compleción.
+,,,
+achievement.heavy_rock_ending.title,It rocks !,Pierre qui ne roule pas,Duro como… la piedra
+achievement.heavy_rock_ending.desc,End a Core Saver run by swinging the heavy rock.,Terminer une partie de Sauveteur de noyau en tapant fort avec la pierre lourde.,Completa una partida de Socorrista de núcleo pegando fuerte con la piedra pesada.
+achievement.heavy_rock_ending.hint,Completion.,Complétion.,Compleción.
+,,,
+achievement.secret_room.title,Was it supposed to be here ?,Etait-ce censé être là ?,¿Se supone que eso debia estar aquí ?
+achievement.secret_room.desc,Find a secret room.,Trouver une salle secrète,Encontrar una camara secreta.
+achievement.secret_room.hint,Is this a wall ?,Est-ce un mur ?,¿Es eso un muro ?
+,,,
+achievement.drop_bearer_stolen.title,It’s mine !,C’est à moi !,Es mío !
+achievement.drop_bearer_stolen.desc,Take back 20 drops from the shrooms.,Reprendre 20 ressources aux champignards.,Recupera 20 recursos de los amigosetas.
+achievement.drop_bearer_stolen.hint,Take it back from them.,Reprenez votre dû.,Que te lo devuelvan !
+,,,
+achievement.all_assignments.title,Mission accomplished,Mission accomplie,Misin cumplida
+achievement.all_assignments.desc,Complete 23 guild assignments.,Compléter 23 missions de guilde.,Completa 23 misiones del gremio.
+achievement.all_assignments.hint,The guild needs you.,La guilde a besoin de vous.,El gremio os necesita.
+,,,
+achievement.all_chaos.title,Chaos,Chaos,Caos
+achievement.all_chaos.desc,Activate all the effects of the chaotic rock.,Activer tous les effets de la roche chaotique.,Activar todos los efectos de la roca caótica.
+achievement.all_chaos.hint,Gotta try them all.,Testez-les tous.,Pruebalos todos.
+,,,
+achievement.waka_waka.title,Waka Waka,Waka Waka,Waka Waka
+achievement.waka_waka.desc,Change the gravity twice in a single run.,Changer deux fois la gravité en une seule partie.,Cambiar dos veces la gravedad en una sola partida.
+achievement.waka_waka.hint,"Up, down, left, right.","Haut, bas, gauche, droite.","Arriba, abajo, a la izquierda, a la derecha."
+,,,
+achievement.double_trouble.title,Double Trouble.,Double problèmes.,Doble problema.
+achievement.double_trouble.desc,Bring two mega irons at the same time to your dome.,Ramener deux super minerais de fer en même temps au dôme.,Recuperar dos super minerales de hierro al mismo tiempo.
+achievement.double_trouble.hint,What happens if I take two ?,Que se passe-t-il si j’en prends deux ?,Que pasa si tomo dos ?
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+loadout.coresaver.title,Core Saver,Sauveteur du noyau,Socorrista de núcleo
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+upgrades.coresaver.title,Core Saver,Sauveteur du noyau,Socorrista de núcleo
+upgrades.coresaver.desc,Find a way to destroy the corrupted relic.,Trouvez une manière de casser la relique corrompue.,Encuentra una forma de romper la reliquia corrupta.
+,,,
+loadout.progress.coresaver,Completion- Core Saver,Complétion – Sauveteur du noyau,Compleción – Socorrista de nucleo
+loadout.progress.relichunt,Completion - Relic Hunt,Complétion – Chasse à la relique,Compleción – Cacería a la reliquia
+,,,
+loadout.custom_achievements.title,Mod Achievements,Succès de Mods,Logros de Mods
+,,,
+assignment.condition.remainingtiles,Mine every block,Miner tous les blocs,Romper todos los bloques
+,,,
+assignment.mineall.title,Need for more room,Besoin de plus de place,Se necesita más espacio
+assignment.mineall.desc,Mine every block in the mine.,Miner tous les blocs de la mine.,Romper todos los bloques de la mina.
+,,,
+assignment.detonators.title,Minefield,Terrain Miné,Campo de minas
+assignment.detonators.desc,The previous mission let a lot of explosives behind them.,La mission précédente a laissé des explosifs derrière elle.,La precedente mision ha dejado explosivos detras de si.
+,,,
+assignment.aprilfools.title,Weird deepness,Profondeurs étranges,Profundidades extrañas
+assignment.aprilfools.desc,"Smtoehnig is wonrg hree, yet it feles filamiar. ",Il y a quelque chose d’étrange ici malgré un sentiment familier.,Hay algo extraño aqui. Pero todo parece como siempre.
+,,,
+assignment.goaltype.mineall,Mine every breakeable block.,Casser tous les blocs cassables.,Romper todos los bloques que se puedan romper.
+assignment.goaltype.gametime,Survive during %d minutes.,Survivre pendant %d minutes.,Sobrevive durante %d minutos.
+,,,
+,,,
+,,,
+,,,
+assignment.thieves.title,Best friends forever,Meilleurs amis,Mejores amigos
+assignment.thieves.desc,"The shroomers in the mine are quite friendly, but they seem to love moving your resources.","Les champignards dans les mines sont assez sympathiques. Cependant, ils semblent avoir une tendance à balader les ressources.",Los amigosetas de la mina son bastante simpáticos pero mueven los recursos.
+,,,
+assignment.big.title,Oversized,On en a gros!,Minerazos
+assignment.big.desc,This planet has way bigger resources than usual. They will be harder to carry around.,Cette planette a des ressources bien plus grandes que d’habitude. Elles seront plus difficiles à transporter.,Los minerales de este planeta son más grandes que de costumbre. Seran más dificiles de transportar.
+,,,
+assignment.megairon.title,Dangerous resources,Ressources dangereuses,Recursos peligrosos
+assignment.megairon.desc,New iron ores lie in the mine. Be careful as the monsters can detect them.,De nouveaux minerais de fer se trouvent dans les mines. Soyez prudents car les monstres peuvent les détecter,Hay nuevos minerales de hierro en la mina. Tén cuidado porque los mónstruos los pueden detectar. 
+,,,
+assignment.secrets.title,Chamber of secrets,La chambre des secrets,La cámara secreta
+assignment.secrets.desc,Secrets hide behind the hard rock of this planet.,Des secrets se cachent derrière la roche dure de cette planète.,Hay secretos que se esconden detras de las rocas duras de este planeta.
+,,,
+assignment.chaos.title,Chaos,Chaos,Caos
+assignment.chaos.desc,Unknown devices have been found in the mines. They seem unpredictable.,Des mécanismes inconnus ont été trouvés dans les mines. Leur effet est imprédictible.,Se han encontrado mecanismos desconocidos en la mina. Sus efectos son imprevicibles.
+,,,
+assignment.destroyer.title,Destruction,Destruction,Destrucción
+assignment.destroyer.desc,"Be careful, a new technology has been detected in these mines. It seems to have the ability to destroy the resources.","Soyez prudent, une nouvelle technologie a été détectée dans les mines. Elle semble être capable de détruire les ressources.","Tén cuidado, se ha detectado una nueva tecnología en las minas.Parece ser capaz de destruir los recursos."
+,,,
+assignment.tinyplanet.title,Tiny Planet,Petite planète,Pequeño planeta
+assignment.tinyplanet.desc,We don’t have much time to mine out all the rocks on this planet.,Nous n’avons pas beaucoup de temps pour miner toutes les roches de cette planète.,No tenemos mucho tiempo para minar todas las rocas de este planeta.
+,,,
+assignment.pyromaniac.title,Pyromaniac,Pyromane,Pirómano
+assignment.pyromaniac.desc,You can’t upgrade your mining tools. You’ll have to use special versions of two gadgets : blast mining and suit blaster.,Vous ne pouvez pas améliorer vos outils de minage. Vous devrez utiliser ces versions spéciales de deux gadgets : forage par explosion et blaster de combinaison,No puedes mejorar tus herramientas de minería. Tendras que servirte de las versiones especiales de explosivos de minería y bláster de traje.
+,,,
+assignment.speleologist.title,Speleologist,Spéléologue,Speleólogo
+assignment.speleologist.desc,This planet has no resources outside of some caves. Explore and find them to gather resources.,Cette planette n’a pas de ressources hormis dans quelques grottes. Explorez et trouvez ces grottes pour collecter des ressources.,Este planeta no tiene recursos aparte de algunas cuevas que sí tienen. Explora y encuentralas para colectar recursos.
+,,,
+assignment.speed.title,Speed !,Vite !,Rápido !
+assignment.speed.desc,Time flows faster on this planet.,Le temps s’écoule plus rapidement sur cette planète.,El tiempo va más rápido en este planeta.
+,,,
+assignment.superhot.title,Super Hot,Super Chaud,Muy caliente
+assignment.superhot.desc,The dome is equiped with super lasers. Your precision will be enhanced while you don’t fire. But beware of the enemies that are stronger than ever.,"Le dome est équipé de super lasers. Votre précision est augmentée tant que vous ne tirez pas. Cependant, faites attention aux ennemis qui sont plus forts que jamais.",La cúpula tiene super laseres. Tu precisión esta aumentada mientras no disparas. Pero ten cuidado con los enemigos que son más fuerte que nunca.
+,,,
+assignment.debt.title,Bankrupt,Faillite,Arruinado
+assignment.debt.desc,The bank will take iron from you regularly. Spend carefuly of your life will come to an end if you have no iron left.,La banque va vous prélever du fer régulièrement. Dépensez avec prudence ou votre vie prendra fin si vous n’avez plus de fer.,El banco va a tomarte hierro reuglarmente. Gasta prudentemente o tu vida acabara al si no te queda hierro.
+,,,
+assignment.autonomous.title,Autonomous,Autonome,Autónomo
+assignment.autonomous.desc,"There are no resources on this planet, you will have to make everything by yourself. A technological support will be given to you.","Il n’y a pas de ressources sur cette planète, vous devrez vous en sortir par vos propres moyens. Une aide technologique vous sera fournie.","No hay recursos en este planeta, tendras que apañartelas. Una ayuda tecnológica te sera dada."
+,,,
+,,,
+,,,
+,,,
+chaos.attractor,Attraction,Attraction,Atracción
+chaos.gravity,Gravity Changed,Gravité modifiée,Cambio de gravedad
+chaos.earthquake,Earthquake,Tremblement de terre,Terremoto
+chaos.wave_sooner,Wave sooner,Vague avancée,Oleada avanzada
+chaos.wave_later,Wave delayed,Vague retardée,Oleada retrazada
+chaos.deficit,Bad luck,Mauvaise pioche,Mala suerte
+chaos.jackpot,Good luck,Bonne pioche,Pura potra
+chaos.bigger_drops,Bigger drops,Grosses ressources,Grandes recursos
+chaos.smaller_drops,Smaller drops,Petites ressources,Pequeños recursos
+,,,
+,,,
+upgrades.blastminingassignment.title,Blast Mining,Forage par explosion,Explosivos de minería
+upgrades.blastminingassignment.desc,Produce blast charges for explosive mining. Carry them into mines and release to detonate.,Produit des charges explosives pour miner. Transportez-les dans les mines et relâchez-les pour qu’elles explosent.,Produce cargas explosivas para la minería explosiva. Llévalas a las minas y suéltalas para que detonen.
+,,,
+upgrades.blastminingblastassignment1.title,Blast 1,Explosion 1,Explosivo 1
+upgrades.blastminingblastassignment1.desc,Increase the blast strength.,Augmente la puissance du souffle de l’explosion.,Aumenta la potencia de la explosión.
+,,,
+upgrades.blastminingblastassignment2.title,Blast 2,Explosion 2,Explosivo 2
+upgrades.blastminingblastassignment2.desc,Further increase the blast strength.,Augmente encore plus la puissance du souffle de l’explosion.,Aumenta aún más la potencia de la explosión.
+,,,
+upgrades.blastminingblastassignment3.title,Blast 3,Explosion 3,Explosivo 3
+upgrades.blastminingblastassignment3.desc,Upgrade the blast charges to extreme strength.,Améliores les charges d’explosion pour obtenir une force extrême.,Mejora las cargas explosivas para que detonén con una potencia extrema.
+,,,
+upgrades.blastminingproductiontimeassignment1.title,Production Time,Production accélérée,Tiempo de producción
+upgrades.blastminingproductiontimeassignment1.desc,Reduce the time needed to create a blast charge.,Réduit le temps nécessaire pour produire une charge explosive.,Reduce el tiempo necesario para crear una carga explosiva.
+,,,
+upgrades.blastminingstickychargeassignment.title,Sticky Directional Charges,Charges directionnelles adhésives.,Cargas direccionales adhesivas
+upgrades.blastminingstickychargeassignment.desc,Charges stick to the first wall they touch and blast a tunnel instead of a circular explosion.,"Les charges explosives se collent au premier mur qu’elles touchent, et leur déflagration n’est pas circulaire, mais en forme de tunnel.",Las cargas se pegan a las primera rocas que tocan y detonan en forma de túnel y no circulármente.
+,,,
+upgrades.blastminingimpactdetonationassignment.title,Impact Detonation,Déflagration à l’impact,Detonación al impactar.
+upgrades.blastminingimpactdetonationassignment.desc,The blast charge will explode on impact with a surface. The explosion will be offset into the direction of the impact.,La charge explosive se déclenche dès qu’elle entre en contact avec une surface. L’explosion est compensée dans la direction de l’impact.,Las cargas explosivas detonan al impactar con una superficie. La explosión se hara en la dirección del impacto.
+,,,
+,,,
+upgrades.suitblasterassignment.title,Suit Blaster,Blaster de combinaison,Bláster de traje
+upgrades.suitblasterassignment.desc,Install a mining blaster into your suit which acan explosively destroy rocks around you.,"Installez dans votre combinaison un blaster minier, capable de faire exploser les rochers qui vous entourent.",Instala un bláster de minería en tu traje que puede destruir explosivamente las rocas que te rodean.
+,,,
+upgrades.suitblastermaxchargeassignment.title,More Charges,Plus de charges,Más cargas
+upgrades.suitblastermaxchargeassignment.desc,"Increase how many charges you can store in your suit. The more charges you have ready, the faster additional ones will charge.","Augmentez le nombre de charges que vous pouvez stocker dans votre combinaison. Plus vous avez de charges prêtes, plus les charges supplémentaires se chargent rapidement.",Aumenta el número de cargas que puedes almacenar en tu traje. Cuantas más tengas preparadasm más rapido se cargarán las adicionales.
+,,,
+upgrades.suitblasterradiusassignment.title,Explosion Radius,Rayon d’explosion ,Radio de explosión
+upgrades.suitblasterradiusassignment.desc,Increase the blast radius.,Augmentez le rayon de l’explosion.,Aumenta el radio de explosión 
+,,,
+upgrades.suitblasterspeedassignment1.title,Charge Speed,Vitesse de charge.,Velocidad de carga 
+upgrades.suitblasterspeedassignment1.desc,Improve how quickly the suit charges a blast.,Améliorez la vitesse à laquelle la combinaison charge une explosion.,Mejora la rapidez con la que el traje carga una explosión.

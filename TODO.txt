@@ -1,0 +1,62 @@
+VISUELS / SONS:
+- son destruction glass
+
+
+BALANCE :
+- 
+
+BUG :
+- Un gadget a spawn sur la coreeater cave (balek? ou changer l'archetype)
+
+
+
+
+
+Autre mod :
+- gérer les resources rate des challenges (weird notamment)
+- faire un archetype pour mineall avec moins de roches
+
+
+TUTO compatibilité :
+- Achievements
+- Game Mode
+- Chaos Tile
+- worldmodifiers
+- Sortir les upgrades de worldmodifiersuperhot et ajouter un worldmodifierstronglaser pour 500 degats
+
+PLUS TARD Game mode :
+- mode combat seulement, à chaque vague : soit un gadget, soit des ressources. Pas de fin.
+
+
+PLUS TARD Assignments :
+- wiggle (épée incontrolable)
+- glass cannon (dome tesla)
+- ??? (dome trajectoire courbe)
+- Farming : nouveau gadget suit pour planter des graines sur les minerais
+- fusion : fusioner des resources identiques triple leur valeur
+	
+
+PLUS TARD nouvelles tiles :
+- Faire en sorte que les profondeurs soient plus sombre et ajouter des tuiles de lumiere
+- troll resources
+- Tile qui change la dureté des roches autour
+- Tiles qui créent un chemin facile (un détour de tiles moins solides qui incitent le joueur à ne pas faire des lignes droites)
+
+
+PLUS TARD CoreSaver
+- Redessiner core eater cave + core eater ending
+- ajouter cables cassés à bad_relic
+- Etendre le gamemode avec des branches de spécialisations à chaque game (tirage d'une version du perso unique à chaque run)
+- Boss
+- Vagues spéciales à un changement de biome
+- Tutos pour moddeurs : achievements et chaos
+
+
+PLUS TARD Nouveau Perso
+- perso explosions qd il tombe, convertit les ressources en les écrasant
+- perso scientifique : corrode les murs pour les détruire, installe des tuiles pour créer un chemin de remontée aux ressources (attracteurs successifs)
+
+
+PLUS TARD COMPATIBILITE:
+- player ajouter des flèches
+- Changer le système de save pour qu'il généralise à d'autres keepers

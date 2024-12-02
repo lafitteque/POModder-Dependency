@@ -1,0 +1,17 @@
+{
+	"name": "Dependency",
+	"namespace": "POModder",
+	"version_number": "0.1.2",
+	"description": "Adds new assignments, new tiles, new areas in the loadout, new custom ingame achievements and a new gamemode.",
+	"website_url": "https://",
+	"dependencies": [],
+	"extra": {
+		"godot": {
+			"incompatibilities": [],
+			"authors": ["PO"],
+			"compatible_mod_loader_version": ["3.0.0"],
+			"compatible_game_version": ["4.2"],
+			"config_defaults": {}
+		}
+	}
+}
