@@ -10,7 +10,8 @@ extends Map
 func revealTile(coord:Vector2):
 	var typeId:int = tileData.get_resource(coord.x, coord.y)
 	var invalids := []
-	
+	if typeId > 10 and typeId < 18:
+		print("debug")
 	modifyTileWhenRevealed(coord,typeId)
 	typeId = tileData.get_resource(coord.x, coord.y)
 	
@@ -32,7 +33,7 @@ func revealTile(coord:Vector2):
 	if tiles.has(coord):
 		return
 	
-	var tile = load("res://content/map/tile/Tile.tscn").instantiate()
+	var tile = load("res://mods-unpacked/POModder-Dependency/replacing_files/Tile.tscn").instantiate()
 	var biomeId:int = tileData.get_biome(coord.x, coord.y)
 	tile.layer = biomeId
 	tile.biome = biomes[tile.layer]
@@ -176,7 +177,7 @@ func generateCaves(minDistanceToCenter := 10):
 	
 	
 	for mod in map_mods:
-		mod.beforeCaveGeneration(self, cavePackeScenes, minDistanceToCenter)
+		mod.beforeCaveGeneration(self, cavePackeScenes, minDistanceToCenter,rand)
 		
 			
 	var availableCaves:Array
@@ -202,7 +203,7 @@ func generateCaves(minDistanceToCenter := 10):
 				cave.queue_free()
 
 	for mod in map_mods:
-		mod.afterCaveGeneration(self)			
+		mod.afterCaveGeneration(self, rand)			
 			
 			
 func addForcedCave(rand, cave, biomeIndex, minDistanceToCenter, accept_higher_layer = true):

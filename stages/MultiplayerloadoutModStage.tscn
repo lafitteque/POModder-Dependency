@@ -489,95 +489,6 @@ horizontal_alignment = 1
 layout_mode = 2
 columns = 3
 
-[node name="BlockCoreSaverLoadout" type="VBoxContainer" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(1200, 0)
-layout_mode = 2
-size_flags_horizontal = 8
-mouse_filter = 2
-theme_override_constants/separation = 40
-
-[node name="Headline" type="Label" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockCoreSaverLoadout"]
-texture_filter = 4
-layout_mode = 2
-theme = ExtResource("12_ano3e")
-theme_override_fonts/font = ExtResource("13_833lr")
-theme_override_font_sizes/font_size = 64
-text = "loadout.coresaver.title"
-label_settings = ExtResource("15_w8x3m")
-horizontal_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockCoreSaverLoadout"]
-layout_mode = 2
-mouse_filter = 2
-theme_override_constants/separation = 60
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockCoreSaverLoadout/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-mouse_filter = 2
-theme_override_constants/separation = 60
-alignment = 1
-
-[node name="DifficultyList" type="VBoxContainer" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockCoreSaverLoadout/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-mouse_filter = 2
-
-[node name="Label3" type="Label" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockCoreSaverLoadout/VBoxContainer/HBoxContainer/DifficultyList"]
-texture_filter = 4
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-theme = ExtResource("12_ano3e")
-theme_override_fonts/font = ExtResource("16_3lkrv")
-theme_override_font_sizes/font_size = 36
-text = "loadout.difficulty.title"
-label_settings = ExtResource("8_n7htd")
-horizontal_alignment = 1
-
-[node name="DifficultyContainers" type="GridContainer" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockCoreSaverLoadout/VBoxContainer/HBoxContainer/DifficultyList"]
-layout_mode = 2
-size_flags_horizontal = 3
-columns = 2
-
-[node name="MapSizeList" type="VBoxContainer" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockCoreSaverLoadout/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-mouse_filter = 2
-
-[node name="Label3" type="Label" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockCoreSaverLoadout/VBoxContainer/HBoxContainer/MapSizeList"]
-texture_filter = 4
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-theme = ExtResource("12_ano3e")
-theme_override_fonts/font = ExtResource("16_3lkrv")
-theme_override_font_sizes/font_size = 36
-text = "loadout.mapsize.title"
-label_settings = ExtResource("8_n7htd")
-horizontal_alignment = 1
-
-[node name="MapsizeContainers" type="VBoxContainer" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockCoreSaverLoadout/VBoxContainer/HBoxContainer/MapSizeList"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ModifiersBox" type="VBoxContainer" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockCoreSaverLoadout/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-script = ExtResource("17_xoslx")
-
-[node name="Label4" type="Label" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockCoreSaverLoadout/VBoxContainer/ModifiersBox"]
-texture_filter = 4
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-theme = ExtResource("12_ano3e")
-theme_override_fonts/font = ExtResource("16_3lkrv")
-theme_override_font_sizes/font_size = 36
-label_settings = ExtResource("8_n7htd")
-horizontal_alignment = 1
-
 [node name="BlockAssignmentsLoadout" type="HBoxContainer" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(2500, 0)
 layout_mode = 2
@@ -966,10 +877,10 @@ offset_bottom = 40.0
 [node name="ZoomArea" type="VBoxContainer" parent="UI"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 1364.0
-offset_top = 1230.0
-offset_right = 1572.0
-offset_bottom = 1372.0
+offset_left = 1368.0
+offset_top = 1268.0
+offset_right = 1576.0
+offset_bottom = 1410.0
 metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="UI/ZoomArea"]
@@ -992,36 +903,6 @@ unique_name_in_owner = true
 layout_mode = 2
 toggleable = true
 titleLocId = "loadout.zoom2"
-
-[node name="BlockProgress" type="VBoxContainer" parent="UI"]
-layout_mode = 0
-offset_left = 1300.0
-offset_top = 1896.0
-offset_right = 2636.0
-offset_bottom = 2808.0
-theme_override_constants/separation = 48
-
-[node name="relichunt" type="VBoxContainer" parent="UI/BlockProgress"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="UI/BlockProgress/relichunt"]
-texture_filter = 4
-layout_mode = 2
-theme = ExtResource("12_ano3e")
-theme_override_fonts/font = ExtResource("13_833lr")
-text = "loadout.progress.relichunt"
-label_settings = ExtResource("15_w8x3m")
-
-[node name="coresaver" type="VBoxContainer" parent="UI/BlockProgress"]
-layout_mode = 2
-
-[node name="Label2" type="Label" parent="UI/BlockProgress/coresaver"]
-texture_filter = 4
-layout_mode = 2
-theme = ExtResource("12_ano3e")
-theme_override_fonts/font = ExtResource("13_833lr")
-text = "loadout.progress.coresaver"
-label_settings = ExtResource("15_w8x3m")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

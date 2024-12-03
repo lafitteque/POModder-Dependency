@@ -1,24 +1,22 @@
 extends MultiplayerLoadoutStage
 class_name MultiplayerLoadoutStageMod
 
-var saver_progress_relichunt_id = "keeper_and_dome_progress_relichunt"
-var saver_progress_coresaver_id = "keeper_and_dome_progress_coresaver"
-
 @onready var data_achievements = get_node("/root/ModLoader/POModder-Dependency").data_achievements
 @onready var custom_achievements_manager = get_node("/root/ModLoader/POModder-Dependency").custom_achievements
 @onready var saver = get_node("/root/ModLoader/POModder-Dependency").saver
 
 var current_assignment_page = 1
 var assignment_per_page = 16
-var max_page_assignment : int 
+@onready var max_page_assignment : int = floor( (Data.assignments.keys().size() - 1 )/assignment_per_page) + 1
 
 var current_game_mode_page = 1
 var game_mode_per_page = 3
-var max_page_game_mode : int 
+@onready var max_page_game_mode : int = floor( (Data.loadoutGameModes.size() - 1) /game_mode_per_page) + 1
 
 var current_custom_achievement_page = 1
 var custom_achievement_per_page = 24
-var max_page_custom_achievement : int 
+@onready var max_page_custom_achievement : int = floor( (data_achievements.CUSTOM_ACHIEVEMENTS.size() - 1) /custom_achievement_per_page) + 1 
+
 
 var current_achievement_page = 1
 var achievement_per_page = 24
@@ -49,7 +47,7 @@ func build(data:Array):
 func createMapDataFor(requiremnts) -> MapData:
 	var tileData = preload("res://content/map/MapData.tscn").instantiate()
 	tileData.clear()
-	tileData.stack(preload("res://mods-unpacked/POModder-Dependency/stages/TileDataStartArea.tscn").instantiate(), Vector2(0, 1))
+	tileData.stack(load("res://mods-unpacked/POModder-Dependency/stages/TileDataStartArea.tscn").instantiate(), Vector2(0, 1))
 	
 	for x in requiremnts:
 		match x:
@@ -63,11 +61,13 @@ func createMapDataFor(requiremnts) -> MapData:
 				tileData.stack(preload("res://stages/loadout/TileDataDomeOpening.tscn").instantiate(), Vector2(-1, 2))
 			"guildrewards":
 				tileData.stack(preload("res://stages/loadout/TileDataGuildRewards.tscn").instantiate(), Vector2(5, 13))
-			_ :
-				for gamemode in mod_gamemodes:
-					if gamemode.has_tiledata() and x == gamemode.get_tiledata_name():
-						tileData.stack(gamemode.get_loadout_tiledata(x), gamemode.get_loadout_tiledata_offset(x))
-	
+
+	for gamemode in mod_gamemodes:
+		if gamemode.has_tiledata():
+			var stack_list = gamemode.get_loadout_tiledata(tileData.duplicate(), requiremnts)
+			for i in range(stack_list.size()):
+				tileData.stack(stack_list[i][0], stack_list[i][1])
+	#
 	if "loadout" in requiremnts:
 		tileData.stack(preload("res://mods-unpacked/POModder-Dependency/content/Loadout_Achievements/TileDataLoadoutAchievements.tscn").instantiate(), Vector2(4, 2))
 	
@@ -87,9 +87,9 @@ func fillGameModes():
 		saver.save_dict["game_mode_loadout"] = Level.loadout.modeId
 		saver.save_data()
 		
-	max_page_game_mode  = min(saver.save_dict["game_mode_page"], current_game_mode_page)
-	max_page_assignment = min(saver.save_dict["assignments_page"], current_assignment_page)
-	max_page_custom_achievement = min(saver.save_dict["custom_achievements_page"], current_custom_achievement_page)
+	current_game_mode_page  = min(saver.save_dict["game_mode_page"], max_page_game_mode)
+	current_assignment_page = min(saver.save_dict["assignments_page"], max_page_assignment)
+	current_custom_achievement_page = min(saver.save_dict["custom_achievements_page"], max_page_custom_achievement)
 	if saver.save_dict["game_mode_loadout"] in Data.loadoutGameModes:
 		Level.loadout.modeId = saver.save_dict["game_mode_loadout"] 
 	else : 
@@ -102,16 +102,9 @@ func fillGameModes():
 	update_achievements()
 	update_custom_achievements()
 	
-	update_keeper_progress()
-	
 	update_assignments()
 		
-	max_page_assignment = floor( (Data.assignments.keys().size() - 1 )/assignment_per_page) + 1
-
-	max_page_game_mode = floor( (Data.loadoutGameModes.size() - 1) /game_mode_per_page) + 1
-
-	max_page_custom_achievement = floor( (data_achievements.CUSTOM_ACHIEVEMENTS.size() - 1) /custom_achievement_per_page) + 1 
-
+	
 	var arrow = preload("res://mods-unpacked/POModder-Dependency/stages/page_choice.tscn")
 	## Create arrows for assignment pages
 	if max_page_assignment > 1:
@@ -171,9 +164,14 @@ func fillGameModes():
 		arrow_containers_achievement.add_child(right_arrow_achievement)
 		right_arrow_achievement.connect("select", next_page_achievement)
 		Style.init(right_arrow_achievement)
+		
+	for mod in mod_gamemodes:
+		mod.fillGameModes(self)
 			
 	await get_tree().create_timer(0.2).timeout
 	gameModeSelected(Level.loadout.modeId)
+	
+
 	
 func update_game_modes():
 	saver.save_dict["game_mode_page"] = current_game_mode_page
@@ -219,81 +217,6 @@ func fillDifficulties(BlockGamemodeName : String = "BlockRelicHuntLoadout"):
 	difficultySelected(Level.loadout.difficulty)
 
 	
-func update_keeper_progress():
-	## Add progress for relichunt
-	saver.load_data()
-	if !saver.save_dict.has(saver_progress_relichunt_id): # if save_file is empty (first time)
-		saver.save_dict[saver_progress_relichunt_id] = {}
-		
-	var save_progress = saver.save_dict[saver_progress_relichunt_id]
-	var block_progress_relichunt = $UI/BlockProgress/relichunt
-	add_mode_progress(block_progress_relichunt, save_progress)
-
-
-	## Add progress for coresaver
-	if !saver.save_dict.has(saver_progress_relichunt_id): # if save_file is empty (first time)
-		saver.save_dict[saver_progress_relichunt_id] = {}
-		
-	save_progress = saver.save_dict[saver_progress_coresaver_id]
-	var block_progress_coresaver = $UI/BlockProgress/coresaver
-	add_mode_progress(block_progress_coresaver, save_progress)
-
-
-func add_mode_progress(ui_vbox, save_progress):
-	for child in ui_vbox.get_children():
-		if child is Label :
-			continue
-		child.free()
-		
-	for keeper in Data.loadoutKeepers:
-		var ui_dome_progress = preload("res://mods-unpacked/POModder-Dependency/content/dome_progress/UI_dome_progress.tscn").instantiate()
-		ui_vbox.add_child(ui_dome_progress)
-		ui_dome_progress.find_child("Label").text = tr("upgrades." + keeper + ".title")
-		var keeper_image = ui_dome_progress.find_child("TextureRect")
-		keeper_image.texture = load("res://content/icons/loadout_" + keeper + "-skin0.png")
-		keeper_image.custom_minimum_size = keeper_image.get_minimum_size()*3
-		
-		
-		if !save_progress.has(keeper): # if save_file is empty (first time)
-			save_progress[keeper] = {}
-		
-		for dome in Data.loadoutDomes:
-			var e  = preload("res://mods-unpacked/POModder-Dependency/content/dome_progress/dome_progress.tscn").instantiate()
-			var dome_texture = e.find_child("Sprite2D")
-			dome_texture.texture = load("res://content/icons/loadout_" + dome + ".png").duplicate()
-			dome_texture.custom_minimum_size = dome_texture.get_minimum_size()*2
-			
-			if !save_progress[keeper].has(dome): # if save_file is empty (first time)
-				save_progress[keeper][dome] = {}
-				
-			if save_progress[keeper][dome].keys().size() > 0: # if any game setup beaten
-				dome_texture.self_modulate = Color(1.0,1.0,1.0,1)
-				dome_texture.material = ShaderMaterial.new()
-				dome_texture.material.set("shader", load("res://mods-unpacked/POModder-Dependency/content/dome_progress/dome_progress_shine.gdshader"))
-				dome_texture.material.set_shader_parameter("line_width", 0.1)
-				dome_texture.material.set_shader_parameter("angle", 1.2)
-				dome_texture.material.set_shader_parameter("shine_color", Color(0.949, 0.631, 0.353))
-			else :
-				dome_texture.self_modulate = Color(0.2,0.2,0.2,1)
-				
-			var map_sizer = e.find_child("map_size",true,false)
-			for child in map_sizer.get_children():
-				child.self_modulate = Color(0.2,0.2,0.2,1)
-					
-			for mapsize in save_progress[keeper][dome].keys() :
-				match mapsize:
-					CONST.MAP_SMALL:
-						map_sizer.set_map_size_to(CONST.MAP_SMALL, save_progress[keeper][dome][mapsize])
-					CONST.MAP_MEDIUM:
-						map_sizer.set_map_size_to(CONST.MAP_MEDIUM, save_progress[keeper][dome][mapsize])
-					CONST.MAP_LARGE:
-						map_sizer.set_map_size_to(CONST.MAP_LARGE, save_progress[keeper][dome][mapsize])
-					CONST.MAP_HUGE:
-						map_sizer.set_map_size_to(CONST.MAP_HUGE, save_progress[keeper][dome][mapsize])
-			map_sizer.set_children_custom_size(2)
-			ui_dome_progress.add_child(e)
-			
-	
 func update_achievements():
 	saver.save_dict["achievements_page"] = current_achievement_page
 	saver.save_data()
@@ -335,18 +258,18 @@ func update_custom_achievements():
 		else :
 			e.setChoice(title, customAchievementId, null, hint)
 
-#func preGenerateMap(requirements):
-	#var generated = load("res://mods-unpacked/POModder-Dependency/replacing_files/Map.tscn").instantiate()
-	#add_child(generated)
-	#generated.setTileData(createMapDataFor(requirements))
-	#generated.init(false, false)
-	#generated.revealInitialState(Vector2(0, 4))
-	#pregeneratedMaps[requirements] = generated
-	#remove_child(generated)
-	#return generated
+func preGenerateMap(requirements):
+	var generated = load("res://mods-unpacked/POModder-Dependency/replacing_files/Map.tscn").instantiate()
+	add_child(generated)
+	generated.setTileData(createMapDataFor(requirements))
+	generated.init(false, false)
+	generated.revealInitialState(Vector2(0, 4))
+	pregeneratedMaps[requirements] = generated
+	remove_child(generated)
+	return generated
 
 func update_assignments():
-	saver.save_dict["assignments_page"] = min(current_assignment_page, max_page_assignment)
+	saver.save_dict["assignments_page"] = current_assignment_page
 	saver.save_data()
 	for child in %AssignmentsContainer.get_children():
 		child.queue_free()

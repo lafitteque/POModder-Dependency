@@ -24,12 +24,13 @@ func deserialize(data: Dictionary):
 			set_meta("destructable", true)
 	
 func setType(type:String):
-	for mod in tile_mods :
-		var forceTileDestructible = mod.setTypeBegin(self,type)
-		if forceTileDestructible:
-			set_meta("destructable", true)
 	super.setType(type)
-	
+	for mod in tile_mods :
+		if mod.set_meta_destructable(self,type) :
+			set_meta("destructable", true)
+			
+	if type == "chaos":
+		print("debug")
 	if ! (type in data_mod.TILE_ID_TO_STRING_MAP.values()):
 		return
 		
