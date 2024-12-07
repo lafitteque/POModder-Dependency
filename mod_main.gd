@@ -42,16 +42,9 @@ func _ready():
 		
 func modInit():	
 	var new_stage = load("res://mods-unpacked/POModder-Dependency/stages/MultiplayerloadoutModStage.tscn")
-	new_stage.take_over_path("res://stages/loadout/multiplayerloadoutmodstage.tscn")
+	new_stage.take_over_path("res://stages/loadout/multiplayerloadoutstage.tscn")
 	
 	var tile = load("res://mods-unpacked/POModder-Dependency/replacing_files/Tile.tscn")
 	tile.take_over_path("res://content/map/tile/Tile.tscn")
-	
-	var map = load("res://mods-unpacked/POModder-Dependency/replacing_files/Map.tscn")
-	map.take_over_path("res://content/map/Map.tscn")
-	
-	var level_stage = preload("res://mods-unpacked/POModder-Dependency/replacing_files/LevelStage.tscn")
-	level_stage.take_over_path("res://stages/level/LevelStage.tscn")
-	
 
 

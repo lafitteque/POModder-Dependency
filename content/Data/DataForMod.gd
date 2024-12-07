@@ -52,7 +52,7 @@ var DROP_FROM_TILES_SCENES := {
 	"nothing" : null
 }
 
-var APRIL_FOOLS_PROBABILITIES = [40.0, 8.0 , 3.0 , 1.0 ,15.0]
+var APRIL_FOOLS_PROBABILITIES = [40.0, 4.0 , 1.2 , 1.0 ,15.0]
 var ALL_DROP_NAMES = [CONST.WATER, CONST.IRON,CONST.SAND , "mega_iron"]
 
 

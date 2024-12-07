@@ -1,5 +1,4 @@
 extends MultiplayerLoadoutStage
-class_name MultiplayerLoadoutStageMod
 
 @onready var data_achievements = get_node("/root/ModLoader/POModder-Dependency").data_achievements
 @onready var custom_achievements_manager = get_node("/root/ModLoader/POModder-Dependency").custom_achievements
@@ -87,9 +86,9 @@ func fillGameModes():
 		saver.save_dict["game_mode_loadout"] = Level.loadout.modeId
 		saver.save_data()
 		
-	current_game_mode_page  = min(saver.save_dict["game_mode_page"], max_page_game_mode)
-	current_assignment_page = min(saver.save_dict["assignments_page"], max_page_assignment)
-	current_custom_achievement_page = min(saver.save_dict["custom_achievements_page"], max_page_custom_achievement)
+	current_game_mode_page  = clamp(saver.save_dict["game_mode_page"], 1, max_page_game_mode)
+	current_assignment_page = clamp(saver.save_dict["assignments_page"], 1, max_page_assignment)
+	current_custom_achievement_page = clamp(saver.save_dict["custom_achievements_page"], 1, max_page_custom_achievement)
 	if saver.save_dict["game_mode_loadout"] in Data.loadoutGameModes:
 		Level.loadout.modeId = saver.save_dict["game_mode_loadout"] 
 	else : 
@@ -258,15 +257,15 @@ func update_custom_achievements():
 		else :
 			e.setChoice(title, customAchievementId, null, hint)
 
-func preGenerateMap(requirements):
-	var generated = load("res://mods-unpacked/POModder-Dependency/replacing_files/Map.tscn").instantiate()
-	add_child(generated)
-	generated.setTileData(createMapDataFor(requirements))
-	generated.init(false, false)
-	generated.revealInitialState(Vector2(0, 4))
-	pregeneratedMaps[requirements] = generated
-	remove_child(generated)
-	return generated
+#func preGenerateMap(requirements):
+	#var generated = load("res://mods-unpacked/POModder-Dependency/replacing_files/Map.tscn").instantiate()
+	#add_child(generated)
+	#generated.setTileData(createMapDataFor(requirements))
+	#generated.init(false, false)
+	#generated.revealInitialState(Vector2(0, 4))
+	#pregeneratedMaps[requirements] = generated
+	#remove_child(generated)
+	#return generated
 
 func update_assignments():
 	saver.save_dict["assignments_page"] = current_assignment_page
@@ -292,11 +291,13 @@ func update_assignments():
 		
 		
 func pyromaniac_selected():
-	Data.parseUpgradesYaml("res://mods-unpacked/POModder-Dependency/yaml/upgrades.yaml")
+	if ModLoader.find_child("POModder-AllYouCanMine",true,false):
+		Data.parseUpgradesYaml("res://mods-unpacked/POModder-AllYouCanMine/yaml/upgrades.yaml")
 	
 func pyromaniac_remove():
-	Data.gadgets.erase("blastminingassignment")
-	Data.gadgets.erase("suitblasterassignment")
+	if ModLoader.find_child("POModder-AllYouCanMine",true,false):
+		Data.gadgets.erase("blastminingassignment")
+		Data.gadgets.erase("suitblasterassignment")
 
 
 func gameModeSelected(id:String):

@@ -58,4 +58,7 @@ var info_achievements = []
 func add_achievement(id : String , stage : String):
 	CUSTOM_ACHIEVEMENTS.append(id)
 	info_achievements.append([stage , id])
-
+	if stage == "":
+		return
+	var custom_achievements = ModLoader.find_child("CustomAchievements",true,false)
+	custom_achievements.achievement_stage[stage].append(load("res://mods-unpacked/POModder-Dependency/content/Achievements/" + id.to_lower()+ ".tscn"))

@@ -44,7 +44,7 @@ size = Vector2(706, 870)
 [sub_resource type="RectangleShape2D" id="9"]
 size = Vector2(2522, 200)
 
-[node name="MultiplayerLoadoutModStage" type="Node" groups=["locale"]]
+[node name="MultiplayerLoadoutStage" type="Node" groups=["locale"]]
 script = ExtResource("1_v57ho")
 
 [node name="Map" parent="." groups=["unstyled"] instance=ExtResource("2_djffl")]

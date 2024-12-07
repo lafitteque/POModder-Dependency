@@ -4,14 +4,14 @@ extends Map
 
 @onready var data_mod = get_node("/root/ModLoader/POModder-Dependency").data_mod
 @onready var map_mods = get_tree().get_nodes_in_group("map-mods")
-	
+
+var should_grow_count = false
+var should_be_small_count = false
 
 
 func revealTile(coord:Vector2):
 	var typeId:int = tileData.get_resource(coord.x, coord.y)
 	var invalids := []
-	if typeId > 10 and typeId < 18:
-		print("debug")
 	modifyTileWhenRevealed(coord,typeId)
 	typeId = tileData.get_resource(coord.x, coord.y)
 	
@@ -78,21 +78,30 @@ func modifyTileWhenRevealed(coord,typeId):
 	
 	
 func addDrop(drop):
+	should_grow_count = 0
+	should_be_small_count = 0
+	
 	var should_stop = false
 	for mod in map_mods:
 		should_stop = should_stop or mod.addDrop(self,drop)
-	if should_stop:
-		return
+
 	
-	if "worldmodifierbigdrops" in Level.loadout.modeConfig.get(CONST.MODE_CONFIG_WORLDMODIFIERS, []) and drop is Drop and \
+	var big = "worldmodifierbigdrops" in Level.loadout.modeConfig.get(CONST.MODE_CONFIG_WORLDMODIFIERS, []) or should_grow_count > 0
+	var small = "worldmodifiersmalldrops" in Level.loadout.modeConfig.get(CONST.MODE_CONFIG_WORLDMODIFIERS, []) or should_be_small_count > 0
+	
+	if big and drop is Drop and \
 	drop.global_position.y >= 20 and drop.carriedBy.size() == 0 :
 		var count = 4
 		if drop.type in data_mod.ALL_DROP_NAMES :
 			count = 8
-		if drop.type == "relic":
+		elif drop.type == "relic":
 			count = 6
-		
+			
+		if should_grow_count == 1 :
+			count = 4
+			
 		add_child(drop)	
+		drop.apply_central_impulse(Vector2(0, 40).rotated(randf() * TAU))
 		Style.init(drop)
 		for i in count:
 			await get_tree().create_timer(0.1).timeout
@@ -105,16 +114,26 @@ func addDrop(drop):
 					child.scale = Vector2(1.0 + 0.1*i, 1.1 + 0.1*i)
 		return 
 		
-	if "worldmodifiersmalldrops" in Level.loadout.modeConfig.get(CONST.MODE_CONFIG_WORLDMODIFIERS, []) and("type" in drop) and \
+	if small and("type" in drop) and \
 	drop.type in data_mod.ALL_DROP_NAMES and !(drop.global_position.y <= 0 or drop.carriedBy.size()>0 ):
 		add_child(drop)	
+		drop.apply_central_impulse(Vector2(0, 40).rotated(randf() * TAU))
 		Style.init(drop)
+		if should_be_small_count == 1 :
+			for child in drop.get_children():
+				if "scale" in child:
+					child.scale = Vector2(0.75 , 0.75)
+			return
 		for child in drop.get_children():
 			if "scale" in child:
 				child.scale = Vector2(0.5 , 0.5)
 		return	
-	
-	add_child(drop)		
+
+	if should_stop:
+		return
+			
+	add_child(drop)	
+	drop.apply_central_impulse(Vector2(0, 40).rotated(randf() * TAU))	
 	Style.init(drop)
 	
 

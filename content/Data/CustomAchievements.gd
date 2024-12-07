@@ -11,7 +11,6 @@ var saver_id = "custom_achievements"
 
 
 var achievement_stage = {
-	"MultiplayerLoadoutModStage" : [],
 	"LevelStage": [],
 	"Prestige" : [],
 	"Assignments" : [],
@@ -79,7 +78,7 @@ func unlockAchievement(achievementId : String):
 	popup.seTitle('achievement.' + achievementId.to_lower() + ".title")
 	StageManager.find_child("Canvas",true,false).add_child(popup)
 	achievements_unlocked[achievementId] = true
-	if StageManager.currentStage.name == "MultiplayerLoadoutModStage":
+	if StageManager.currentStage.name == "MultiplayerLoadoutStage":
 		StageManager.currentStage.update_custom_achievements()
 	save_data()
 				
