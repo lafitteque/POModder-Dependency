@@ -15,7 +15,7 @@ var achievement_stage = {
 	"Prestige" : [],
 	"Assignments" : [],
 	"Relichunt" : [],
-	"CoreSaver" : [],
+	"Coresaver" : [],
 	"MultiplayerLoadoutStage" : [],
 	"TitleStage":[],
 	"LandingSequence":[],
@@ -43,7 +43,8 @@ func _ready():
 	for achievementId in data_achievements.CUSTOM_ACHIEVEMENTS:
 		if !achievements_unlocked.has(achievementId):
 			achievements_unlocked[achievementId] = false 
-
+	print(achievements_unlocked)
+	print("debug")
 	
 	
 func _exit_tree():
@@ -61,6 +62,7 @@ func change_stage(new_stage : String):
 	
 	if new_stage == "LevelStage":
 		for key in achievement_stage.keys():
+			print(Level.mode.name)
 			if Level.mode.name == key:
 				for achievement in achievement_stage[key]:
 					var new_child = achievement.instantiate()
@@ -68,11 +70,10 @@ func change_stage(new_stage : String):
 					all_children.append(new_child)
 					
 func unlockAchievement(achievementId : String):
-	if ! achievements_unlocked.has(achievementId):
+	if achievements_unlocked.has(achievementId) and achievements_unlocked[achievementId]:
 		return
-		
-	if achievements_unlocked[achievementId]:
-		return
+	if !achievements_unlocked.has(achievementId):
+		achievements_unlocked[achievementId] = true
 	
 	var popup = preload("res://mods-unpacked/POModder-Dependency/content/Achievements/Achievement_popup.tscn").instantiate()
 	popup.seTitle('achievement.' + achievementId.to_lower() + ".title")
@@ -84,7 +85,7 @@ func unlockAchievement(achievementId : String):
 				
 func isAchievementUnlocked(achievementId : String):
 	if ! achievements_unlocked.has(achievementId):
-		return true
+		return false
 		
 	return achievements_unlocked[achievementId] 
 	
@@ -94,5 +95,5 @@ func save_data():
 
 
 func update_chaos_achievement():
-	if saver.save_dict["chaos_uses"].keys().size() >= 9:
+	if saver.save_dict["chaos_uses"].keys().size() >= 11:
 		unlockAchievement("ALL_CHAOS")

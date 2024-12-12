@@ -16,6 +16,10 @@ var current_custom_achievement_page = 1
 var custom_achievement_per_page = 24
 @onready var max_page_custom_achievement : int = floor( (data_achievements.CUSTOM_ACHIEVEMENTS.size() - 1) /custom_achievement_per_page) + 1 
 
+var current_modif_page = 1
+var modif_per_page = 9
+@onready var max_page_modif : int = floor( (GameWorld.unlockedRunModifiers.size() - 1 )/modif_per_page) + 1
+
 
 var current_achievement_page = 1
 var achievement_per_page = 24
@@ -102,7 +106,6 @@ func fillGameModes():
 	update_custom_achievements()
 	
 	update_assignments()
-		
 	
 	var arrow = preload("res://mods-unpacked/POModder-Dependency/stages/page_choice.tscn")
 	## Create arrows for assignment pages
@@ -164,12 +167,29 @@ func fillGameModes():
 		right_arrow_achievement.connect("select", next_page_achievement)
 		Style.init(right_arrow_achievement)
 		
+		
+	## Create arrows for assignment pages
+	if max_page_modif > 1:
+		var arrow_containers_modif = $UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockRelicHuntLoadout/VBoxContainer/ModifiersBox/ArrowsContainer
+
+		var left_arrow_modif = arrow.instantiate()
+		left_arrow_modif.find_child("Icon",true,false).flip_h = true
+		left_arrow_modif.connect("select", previous_page_modif)
+		arrow_containers_modif.add_child(left_arrow_modif)
+		Style.init(arrow_containers_modif)
+		
+		var right_arrow_modif = arrow.instantiate()
+		arrow_containers_modif.add_child(right_arrow_modif)
+		right_arrow_modif.connect("select", next_page_modif)
+		Style.init(right_arrow_modif)
+		
 	for mod in mod_gamemodes:
 		mod.fillGameModes(self)
 			
 	await get_tree().create_timer(0.2).timeout
 	gameModeSelected(Level.loadout.modeId)
 	
+	update_modif()
 
 	
 func update_game_modes():
@@ -321,6 +341,7 @@ func gameModeSelected(id:String):
 		CONST.MODE_RELICHUNT:
 			if GameWorld.lastLoadoutsByMode.has(id):
 				setLoadout(GameWorld.lastLoadoutsByMode.get(id))
+				update_modif()
 		CONST.MODE_PRESTIGE:
 			var found = false
 			for c in find_child("PrestigeModeVariantContainer").get_children():
@@ -518,6 +539,29 @@ func mapSizeSelected(id):
 	GameWorld.getNextRandomWorldId()
 
 			
+func update_modif():
+	var Mbox = %ModifiersBox/Modifiers
+
+	var modifiers:Array = Level.loadout.modeConfig.get(CONST.MODE_CONFIG_WORLDMODIFIERS, [])
+	
+	for x in Mbox.get_children():
+		Mbox.remove_child(x)
+	
+	if GameWorld.unlockedRunModifiers.size() > 0:
+		for modifier in GameWorld.unlockedRunModifiers.slice((current_modif_page-1)*modif_per_page,current_modif_page*modif_per_page):
+			var e = preload("res://stages/loadout/LoadoutChoice.tscn").instantiate()
+			e.toggleable = true
+			e.selected = modifiers.has("worldmodifier" + modifier)
+			e.setChoice("loadout.mode." + modifier, "worldmodifier" + modifier, null, "loadout.mode." + modifier + ".desc")
+			Mbox.add_child(e)
+			e.toggled.connect(self.modifierSelected.bind("worldmodifier" + modifier))
+	else:
+		Mbox.visible = false
+		
+func modifierSelected(toggled: bool, modif_name):
+	var Mbox = %ModifiersBox
+	Mbox.modifierSelected(toggled, modif_name)
+	
 func difficultySelected(d):
 	resetPersistMetaCooldown()
 	Audio.sound("gui_select")
@@ -616,3 +660,10 @@ func previous_page_achievement():
 	current_achievement_page = max(1,current_achievement_page-1)
 	update_achievements()
 	
+func next_page_modif():
+	current_modif_page = min(max_page_modif,current_modif_page+1)
+	update_modif()
+	
+func previous_page_modif():
+	current_modif_page = max(1,current_modif_page-1)
+	update_modif()

@@ -1,26 +1,26 @@
 [gd_scene load_steps=31 format=3 uid="uid://ba0ww61h080jf"]
 
-[ext_resource type="Script" path="res://mods-unpacked/POModder-Dependency/stages/MultiplayerloadoutStageMod.gd" id="1_v57ho"]
-[ext_resource type="PackedScene" path="res://content/map/Map.tscn" id="2_djffl"]
-[ext_resource type="PackedScene" path="res://content/worlds/world1/World1.tscn" id="3_i3eyx"]
-[ext_resource type="Script" path="res://stages/loadout/MultiplayerLoadoutCamera.gd" id="4_whlfv"]
-[ext_resource type="PackedScene" path="res://systems/deprecatedtween/DeprecatedTween.tscn" id="5_i45ha"]
-[ext_resource type="PackedScene" path="res://gui/buttons/Action.tscn" id="6_8xcr6"]
-[ext_resource type="LabelSettings" path="res://gui/fontsettings/ActionHintFontSettings.tres" id="7_bi043"]
-[ext_resource type="LabelSettings" path="res://gui/fontsettings/LargeFontSettings.tres" id="8_n7htd"]
-[ext_resource type="PackedScene" path="res://stages/loadout/LoadoutChoice.tscn" id="9_jddxa"]
-[ext_resource type="Script" path="res://stages/loadout/ChoiceHintContainer.gd" id="10_rskjc"]
-[ext_resource type="LabelSettings" path="res://gui/fontsettings/NormalFontSettings.tres" id="11_l5blw"]
-[ext_resource type="Theme" path="res://gui/theme.tres" id="12_ano3e"]
-[ext_resource type="FontVariation" path="res://gui/fonts/FontHeading.tres" id="13_833lr"]
-[ext_resource type="LabelSettings" path="res://gui/fontsettings/HeadingFontSettings.tres" id="14_5rxjy"]
-[ext_resource type="LabelSettings" path="res://gui/fontsettings/VeryLargeFontSettings.tres" id="15_w8x3m"]
-[ext_resource type="FontVariation" path="res://gui/fonts/FontLarge.tres" id="16_3lkrv"]
-[ext_resource type="Script" path="res://stages/loadout/ModifiersBox.gd" id="17_xoslx"]
-[ext_resource type="PackedScene" path="res://stages/loadout/AssignmentDisplay.tscn" id="18_4da1i"]
-[ext_resource type="Script" path="res://stages/loadout/AssignmentLeaderboard.gd" id="19_pc22u"]
-[ext_resource type="Texture2D" uid="uid://b6g0mx6jboumy" path="res://content/icons/badge1.png" id="20_b67av"]
-[ext_resource type="PackedScene" path="res://systems/audio/EffectHandler.tscn" id="21_e587k"]
+[ext_resource type="Script" path="res://mods-unpacked/POModder-Dependency/stages/MultiplayerloadoutStageMod.gd" id="1_rlof7"]
+[ext_resource type="PackedScene" path="res://content/map/Map.tscn" id="2_keruu"]
+[ext_resource type="PackedScene" path="res://content/worlds/world1/World1.tscn" id="3_uyr7m"]
+[ext_resource type="Script" path="res://stages/loadout/MultiplayerLoadoutCamera.gd" id="4_m8117"]
+[ext_resource type="PackedScene" path="res://systems/deprecatedtween/DeprecatedTween.tscn" id="5_jfao1"]
+[ext_resource type="PackedScene" path="res://gui/buttons/Action.tscn" id="6_b1bi1"]
+[ext_resource type="LabelSettings" path="res://gui/fontsettings/ActionHintFontSettings.tres" id="7_6ck30"]
+[ext_resource type="LabelSettings" path="res://gui/fontsettings/LargeFontSettings.tres" id="8_3dwao"]
+[ext_resource type="PackedScene" uid="uid://bbti6oixf0gfh" path="res://stages/loadout/LoadoutChoice.tscn" id="9_j6ttb"]
+[ext_resource type="Script" path="res://stages/loadout/ChoiceHintContainer.gd" id="10_8c58w"]
+[ext_resource type="LabelSettings" path="res://gui/fontsettings/NormalFontSettings.tres" id="11_u30tl"]
+[ext_resource type="Theme" path="res://gui/theme.tres" id="12_47yj4"]
+[ext_resource type="FontVariation" path="res://gui/fonts/FontHeading.tres" id="13_oymhn"]
+[ext_resource type="LabelSettings" path="res://gui/fontsettings/HeadingFontSettings.tres" id="14_kts5u"]
+[ext_resource type="LabelSettings" path="res://gui/fontsettings/VeryLargeFontSettings.tres" id="15_36jbh"]
+[ext_resource type="FontVariation" path="res://gui/fonts/FontLarge.tres" id="16_ob4gb"]
+[ext_resource type="Script" path="res://stages/loadout/ModifiersBox.gd" id="17_ijk4f"]
+[ext_resource type="PackedScene" uid="uid://dbyykile8w35n" path="res://stages/loadout/AssignmentDisplay.tscn" id="18_fv5cf"]
+[ext_resource type="Script" path="res://stages/loadout/AssignmentLeaderboard.gd" id="19_0h4eo"]
+[ext_resource type="Texture2D" uid="uid://b6g0mx6jboumy" path="res://content/icons/badge1.png" id="20_ftu8x"]
+[ext_resource type="PackedScene" path="res://systems/audio/EffectHandler.tscn" id="21_v5q8t"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(91, 800)
@@ -45,13 +45,13 @@ size = Vector2(706, 870)
 size = Vector2(2522, 200)
 
 [node name="MultiplayerLoadoutStage" type="Node" groups=["locale"]]
-script = ExtResource("1_v57ho")
+script = ExtResource("1_rlof7")
 
-[node name="Map" parent="." groups=["unstyled"] instance=ExtResource("2_djffl")]
+[node name="Map" parent="." groups=["unstyled"] instance=ExtResource("2_keruu")]
 z_index = -1
 position = Vector2(1, 14)
 
-[node name="World1" parent="." instance=ExtResource("3_i3eyx")]
+[node name="World1" parent="." instance=ExtResource("3_uyr7m")]
 position = Vector2(0, 14)
 
 [node name="VisibilityChecker" type="Area2D" parent="."]
@@ -94,7 +94,7 @@ zoom = Vector2(4, 4)
 process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 20.0
-script = ExtResource("4_whlfv")
+script = ExtResource("4_m8117")
 scroll_speed = 8.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Camera"]
@@ -173,7 +173,7 @@ collision_mask = 33554432
 shape = SubResource("8")
 debug_color = Color(0.6402, 0.522819, 0.0213806, 0.454902)
 
-[node name="Tween" parent="Camera" instance=ExtResource("5_i45ha")]
+[node name="Tween" parent="Camera" instance=ExtResource("5_jfao1")]
 
 [node name="DropDeleter" type="Area2D" parent="."]
 position = Vector2(0, 1000)
@@ -197,18 +197,18 @@ offset_bottom = 223.0
 scale = Vector2(0.25, 0.25)
 alignment = 1
 
-[node name="ActionKeeperMoveLeft" parent="MoveReminder" instance=ExtResource("6_8xcr6")]
+[node name="ActionKeeperMoveLeft" parent="MoveReminder" instance=ExtResource("6_b1bi1")]
 layout_mode = 2
 action = "ui_left"
 
-[node name="ActionKeeperMoveRight" parent="MoveReminder" groups=["hide_for_gamepad"] instance=ExtResource("6_8xcr6")]
+[node name="ActionKeeperMoveRight" parent="MoveReminder" groups=["hide_for_gamepad"] instance=ExtResource("6_b1bi1")]
 layout_mode = 2
 action = "ui_right"
 
 [node name="Label" type="Label" parent="MoveReminder"]
 layout_mode = 2
 text = "options.keybindings.action.general.move"
-label_settings = ExtResource("7_bi043")
+label_settings = ExtResource("7_6ck30")
 
 [node name="UI" type="Control" parent="."]
 layout_direction = 2
@@ -234,10 +234,10 @@ theme_override_constants/separation = 12
 visible = false
 layout_mode = 2
 text = "Choose a game mode!"
-label_settings = ExtResource("8_n7htd")
+label_settings = ExtResource("8_3dwao")
 horizontal_alignment = 1
 
-[node name="StartRunChoice" parent="UI/BlockStartRun" instance=ExtResource("9_jddxa")]
+[node name="StartRunChoice" parent="UI/BlockStartRun" instance=ExtResource("9_j6ttb")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
@@ -246,21 +246,21 @@ titleLocId = "loadout.secondstage.start"
 [node name="ChoiceHintContainer" type="HBoxContainer" parent="UI/BlockStartRun"]
 layout_mode = 2
 alignment = 1
-script = ExtResource("10_rskjc")
+script = ExtResource("10_8c58w")
 
 [node name="Label1" type="Label" parent="UI/BlockStartRun/ChoiceHintContainer"]
 layout_mode = 2
 text = "Press"
-label_settings = ExtResource("11_l5blw")
+label_settings = ExtResource("11_u30tl")
 
-[node name="Action" parent="UI/BlockStartRun/ChoiceHintContainer" instance=ExtResource("6_8xcr6")]
+[node name="Action" parent="UI/BlockStartRun/ChoiceHintContainer" instance=ExtResource("6_b1bi1")]
 layout_mode = 2
 action = "ui_select"
 
 [node name="Label3" type="Label" parent="UI/BlockStartRun/ChoiceHintContainer"]
 layout_mode = 2
 text = "to choose an option."
-label_settings = ExtResource("11_l5blw")
+label_settings = ExtResource("11_u30tl")
 
 [node name="Control" type="Control" parent="UI/BlockStartRun"]
 custom_minimum_size = Vector2(0, 60)
@@ -279,11 +279,11 @@ theme_override_constants/separation = 40
 [node name="Headline" type="Label" parent="UI/BlockKeeper"]
 texture_filter = 4
 layout_mode = 2
-theme = ExtResource("12_ano3e")
-theme_override_fonts/font = ExtResource("13_833lr")
+theme = ExtResource("12_47yj4")
+theme_override_fonts/font = ExtResource("13_oymhn")
 theme_override_font_sizes/font_size = 64
 text = "loadout.keeper"
-label_settings = ExtResource("14_5rxjy")
+label_settings = ExtResource("14_kts5u")
 horizontal_alignment = 1
 uppercase = true
 
@@ -330,7 +330,7 @@ mouse_filter = 2
 [node name="Label" type="Label" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockPrestigeLoadout/VBoxContainer2"]
 layout_mode = 2
 text = "loadout.prestige.fairness.headline"
-label_settings = ExtResource("8_n7htd")
+label_settings = ExtResource("8_3dwao")
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockPrestigeLoadout/VBoxContainer2"]
@@ -346,11 +346,11 @@ mouse_filter = 2
 [node name="Headline" type="Label" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockPrestigeLoadout/VBoxContainer"]
 texture_filter = 4
 layout_mode = 2
-theme = ExtResource("12_ano3e")
-theme_override_fonts/font = ExtResource("13_833lr")
+theme = ExtResource("12_47yj4")
+theme_override_fonts/font = ExtResource("13_oymhn")
 theme_override_font_sizes/font_size = 64
 text = "loadout.prestige.title"
-label_settings = ExtResource("15_w8x3m")
+label_settings = ExtResource("15_36jbh")
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockPrestigeLoadout/VBoxContainer"]
@@ -380,7 +380,7 @@ mouse_filter = 2
 layout_mode = 2
 mouse_filter = 2
 
-[node name="LoadoutChoiceFriendlyMode" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockPrestigeLoadout/VBoxContainer/VBoxContainer2/HBoxContainer2" instance=ExtResource("9_jddxa")]
+[node name="LoadoutChoiceFriendlyMode" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockPrestigeLoadout/VBoxContainer/VBoxContainer2/HBoxContainer2" instance=ExtResource("9_j6ttb")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
@@ -388,7 +388,7 @@ toggleable = true
 titleLocId = "loadout.prestige.friend.mode"
 descLocId = "loadout.prestige.friend.desc"
 
-[node name="LoadoutChoiceProMode" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockPrestigeLoadout/VBoxContainer/VBoxContainer2/HBoxContainer2" instance=ExtResource("9_jddxa")]
+[node name="LoadoutChoiceProMode" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockPrestigeLoadout/VBoxContainer/VBoxContainer2/HBoxContainer2" instance=ExtResource("9_j6ttb")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
@@ -405,11 +405,11 @@ theme_override_constants/separation = 40
 [node name="Headline" type="Label" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockRelicHuntLoadout"]
 texture_filter = 4
 layout_mode = 2
-theme = ExtResource("12_ano3e")
-theme_override_fonts/font = ExtResource("13_833lr")
+theme = ExtResource("12_47yj4")
+theme_override_fonts/font = ExtResource("13_oymhn")
 theme_override_font_sizes/font_size = 64
 text = "loadout.relichunt.title"
-label_settings = ExtResource("15_w8x3m")
+label_settings = ExtResource("15_36jbh")
 horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockRelicHuntLoadout"]
@@ -434,11 +434,11 @@ texture_filter = 4
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-theme = ExtResource("12_ano3e")
-theme_override_fonts/font = ExtResource("16_3lkrv")
+theme = ExtResource("12_47yj4")
+theme_override_fonts/font = ExtResource("16_ob4gb")
 theme_override_font_sizes/font_size = 36
 text = "loadout.difficulty.title"
-label_settings = ExtResource("8_n7htd")
+label_settings = ExtResource("8_3dwao")
 horizontal_alignment = 1
 
 [node name="DifficultyContainers" type="GridContainer" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockRelicHuntLoadout/VBoxContainer/HBoxContainer/DifficultyList"]
@@ -456,11 +456,11 @@ texture_filter = 4
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-theme = ExtResource("12_ano3e")
-theme_override_fonts/font = ExtResource("16_3lkrv")
+theme = ExtResource("12_47yj4")
+theme_override_fonts/font = ExtResource("16_ob4gb")
 theme_override_font_sizes/font_size = 36
 text = "loadout.mapsize.title"
-label_settings = ExtResource("8_n7htd")
+label_settings = ExtResource("8_3dwao")
 horizontal_alignment = 1
 
 [node name="MapsizeContainers" type="VBoxContainer" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockRelicHuntLoadout/VBoxContainer/HBoxContainer/MapSizeList"]
@@ -471,23 +471,28 @@ size_flags_horizontal = 3
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-script = ExtResource("17_xoslx")
+script = ExtResource("17_ijk4f")
 
 [node name="Label4" type="Label" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockRelicHuntLoadout/VBoxContainer/ModifiersBox"]
 texture_filter = 4
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-theme = ExtResource("12_ano3e")
-theme_override_fonts/font = ExtResource("16_3lkrv")
+theme = ExtResource("12_47yj4")
+theme_override_fonts/font = ExtResource("16_ob4gb")
 theme_override_font_sizes/font_size = 36
 text = "loadout.relichunt.modifiers"
-label_settings = ExtResource("8_n7htd")
+label_settings = ExtResource("8_3dwao")
 horizontal_alignment = 1
 
 [node name="Modifiers" type="GridContainer" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockRelicHuntLoadout/VBoxContainer/ModifiersBox"]
 layout_mode = 2
 columns = 3
+
+[node name="ArrowsContainer" type="HBoxContainer" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockRelicHuntLoadout/VBoxContainer/ModifiersBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 24
 
 [node name="BlockAssignmentsLoadout" type="HBoxContainer" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(2500, 0)
@@ -504,11 +509,11 @@ theme_override_constants/separation = 60
 [node name="Headline" type="Label" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockAssignmentsLoadout/Vbox2"]
 texture_filter = 4
 layout_mode = 2
-theme = ExtResource("12_ano3e")
-theme_override_fonts/font = ExtResource("13_833lr")
+theme = ExtResource("12_47yj4")
+theme_override_fonts/font = ExtResource("13_oymhn")
 theme_override_font_sizes/font_size = 64
 text = "loadout.assignment.title"
-label_settings = ExtResource("15_w8x3m")
+label_settings = ExtResource("15_36jbh")
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockAssignmentsLoadout/Vbox2"]
@@ -547,10 +552,10 @@ layout_mode = 2
 [node name="Label" type="Label" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockAssignmentsLoadout/Vbox2/HBoxContainer/ChosenAssignmentBox/VBoxContainer"]
 layout_mode = 2
 text = "assignment.chosen.title"
-label_settings = ExtResource("8_n7htd")
+label_settings = ExtResource("8_3dwao")
 horizontal_alignment = 1
 
-[node name="AssignmentChoice" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockAssignmentsLoadout/Vbox2/HBoxContainer/ChosenAssignmentBox/VBoxContainer" instance=ExtResource("18_4da1i")]
+[node name="AssignmentChoice" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockAssignmentsLoadout/Vbox2/HBoxContainer/ChosenAssignmentBox/VBoxContainer" instance=ExtResource("18_fv5cf")]
 unique_name_in_owner = true
 layout_mode = 2
 
@@ -559,26 +564,26 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
-script = ExtResource("19_pc22u")
+script = ExtResource("19_0h4eo")
 
 [node name="Headline" type="Label" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockAssignmentsLoadout/Vbox2/HBoxContainer/ChosenAssignmentBox/AssignmentLeaderboard"]
 texture_filter = 4
 layout_mode = 2
-theme = ExtResource("12_ano3e")
-theme_override_fonts/font = ExtResource("13_833lr")
+theme = ExtResource("12_47yj4")
+theme_override_fonts/font = ExtResource("13_oymhn")
 theme_override_font_sizes/font_size = 64
 text = "leaderboard.fellowkeepers"
-label_settings = ExtResource("15_w8x3m")
+label_settings = ExtResource("15_36jbh")
 horizontal_alignment = 1
 
 [node name="ErrorLabel" type="Label" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockAssignmentsLoadout/Vbox2/HBoxContainer/ChosenAssignmentBox/AssignmentLeaderboard"]
 visible = false
 texture_filter = 4
 layout_mode = 2
-theme = ExtResource("12_ano3e")
-theme_override_fonts/font = ExtResource("13_833lr")
+theme = ExtResource("12_47yj4")
+theme_override_fonts/font = ExtResource("13_oymhn")
 theme_override_font_sizes/font_size = 64
-label_settings = ExtResource("11_l5blw")
+label_settings = ExtResource("11_u30tl")
 horizontal_alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockAssignmentsLoadout/Vbox2/HBoxContainer/ChosenAssignmentBox/AssignmentLeaderboard"]
@@ -590,14 +595,14 @@ columns = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "loadout.keeper"
-label_settings = ExtResource("8_n7htd")
+label_settings = ExtResource("8_3dwao")
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="UI/BlockGameMode/HBoxContainer/VBoxContainer/BlockAssignmentsLoadout/Vbox2/HBoxContainer/ChosenAssignmentBox/AssignmentLeaderboard/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "level.assignment.badges"
-label_settings = ExtResource("8_n7htd")
+label_settings = ExtResource("8_3dwao")
 horizontal_alignment = 1
 
 [node name="GameModeMarginContainer" type="MarginContainer" parent="UI/BlockGameMode/HBoxContainer"]
@@ -613,11 +618,11 @@ theme_override_constants/separation = 40
 [node name="Headline" type="Label" parent="UI/BlockGameMode/HBoxContainer/GameModeMarginContainer/VBoxContainer"]
 texture_filter = 4
 layout_mode = 2
-theme = ExtResource("12_ano3e")
-theme_override_fonts/font = ExtResource("13_833lr")
+theme = ExtResource("12_47yj4")
+theme_override_fonts/font = ExtResource("13_oymhn")
 theme_override_font_sizes/font_size = 64
 text = "loadout.mode"
-label_settings = ExtResource("14_5rxjy")
+label_settings = ExtResource("14_kts5u")
 horizontal_alignment = 1
 uppercase = true
 
@@ -648,11 +653,11 @@ layout_mode = 2
 [node name="Headline" type="Label" parent="UI/BlockGuildReward/MarginContainer"]
 texture_filter = 4
 layout_mode = 2
-theme = ExtResource("12_ano3e")
-theme_override_fonts/font = ExtResource("13_833lr")
+theme = ExtResource("12_47yj4")
+theme_override_fonts/font = ExtResource("13_oymhn")
 theme_override_font_sizes/font_size = 64
 text = "loadout.assignment.shop"
-label_settings = ExtResource("14_5rxjy")
+label_settings = ExtResource("14_kts5u")
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
@@ -671,18 +676,18 @@ alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 text = "Available Badges: %d"
-label_settings = ExtResource("8_n7htd")
+label_settings = ExtResource("8_3dwao")
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="UI/BlockGuildReward/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("20_b67av")
+texture = ExtResource("20_ftu8x")
 stretch_mode = 3
 
 [node name="Label" type="Label" parent="UI/BlockGuildReward/VBoxContainer"]
 layout_mode = 2
 text = "level.assignment.badges.toggle"
-label_settings = ExtResource("11_l5blw")
+label_settings = ExtResource("11_u30tl")
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -706,11 +711,11 @@ theme_override_constants/separation = 40
 [node name="Headline" type="Label" parent="UI/BlockDomeLoadout"]
 texture_filter = 4
 layout_mode = 2
-theme = ExtResource("12_ano3e")
-theme_override_fonts/font = ExtResource("13_833lr")
+theme = ExtResource("12_47yj4")
+theme_override_fonts/font = ExtResource("13_oymhn")
 theme_override_font_sizes/font_size = 64
 text = "loadout.title"
-label_settings = ExtResource("14_5rxjy")
+label_settings = ExtResource("14_kts5u")
 uppercase = true
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/BlockDomeLoadout"]
@@ -736,11 +741,11 @@ custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-theme = ExtResource("12_ano3e")
-theme_override_fonts/font = ExtResource("16_3lkrv")
+theme = ExtResource("12_47yj4")
+theme_override_fonts/font = ExtResource("16_ob4gb")
 theme_override_font_sizes/font_size = 36
 text = "loadout.gadget.additional"
-label_settings = ExtResource("8_n7htd")
+label_settings = ExtResource("8_3dwao")
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -753,11 +758,11 @@ texture_filter = 4
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-theme = ExtResource("12_ano3e")
-theme_override_fonts/font = ExtResource("16_3lkrv")
+theme = ExtResource("12_47yj4")
+theme_override_fonts/font = ExtResource("16_ob4gb")
 theme_override_font_sizes/font_size = 36
 text = "loadout.dome"
-label_settings = ExtResource("8_n7htd")
+label_settings = ExtResource("8_3dwao")
 horizontal_alignment = 1
 
 [node name="PrimaryGadgetContainers" type="VBoxContainer" parent="UI/BlockDomeLoadout/MarginContainer/HBoxContainer"]
@@ -770,11 +775,11 @@ texture_filter = 4
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-theme = ExtResource("12_ano3e")
-theme_override_fonts/font = ExtResource("16_3lkrv")
+theme = ExtResource("12_47yj4")
+theme_override_fonts/font = ExtResource("16_ob4gb")
 theme_override_font_sizes/font_size = 36
 text = "loadout.gadget"
-label_settings = ExtResource("8_n7htd")
+label_settings = ExtResource("8_3dwao")
 horizontal_alignment = 1
 
 [node name="PetList" type="VBoxContainer" parent="UI/BlockDomeLoadout/MarginContainer/HBoxContainer"]
@@ -787,11 +792,11 @@ texture_filter = 4
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-theme = ExtResource("12_ano3e")
-theme_override_fonts/font = ExtResource("16_3lkrv")
+theme = ExtResource("12_47yj4")
+theme_override_fonts/font = ExtResource("16_ob4gb")
 theme_override_font_sizes/font_size = 36
 text = "loadout.pet"
-label_settings = ExtResource("8_n7htd")
+label_settings = ExtResource("8_3dwao")
 horizontal_alignment = 1
 
 [node name="PetContainers" type="GridContainer" parent="UI/BlockDomeLoadout/MarginContainer/HBoxContainer/PetList"]
@@ -812,11 +817,11 @@ layout_mode = 2
 [node name="Headline" type="Label" parent="UI/BlockAchievements/MarginContainer"]
 texture_filter = 4
 layout_mode = 2
-theme = ExtResource("12_ano3e")
-theme_override_fonts/font = ExtResource("13_833lr")
+theme = ExtResource("12_47yj4")
+theme_override_fonts/font = ExtResource("13_oymhn")
 theme_override_font_sizes/font_size = 64
 text = "loadout.achievements.title"
-label_settings = ExtResource("14_5rxjy")
+label_settings = ExtResource("14_kts5u")
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
@@ -848,11 +853,11 @@ layout_mode = 2
 [node name="Headline" type="Label" parent="UI/BlockCustomAchievements/MarginContainer"]
 texture_filter = 4
 layout_mode = 2
-theme = ExtResource("12_ano3e")
-theme_override_fonts/font = ExtResource("13_833lr")
+theme = ExtResource("12_47yj4")
+theme_override_fonts/font = ExtResource("13_oymhn")
 theme_override_font_sizes/font_size = 64
 text = "loadout.custom_achievements.title"
-label_settings = ExtResource("14_5rxjy")
+label_settings = ExtResource("14_kts5u")
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
@@ -886,19 +891,19 @@ metadata/_edit_group_ = true
 [node name="Label" type="Label" parent="UI/ZoomArea"]
 layout_mode = 2
 text = "loadout.zoom"
-label_settings = ExtResource("8_n7htd")
+label_settings = ExtResource("8_3dwao")
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/ZoomArea"]
 layout_mode = 2
 
-[node name="LoadoutChoiceZoom1" parent="UI/ZoomArea/HBoxContainer" instance=ExtResource("9_jddxa")]
+[node name="LoadoutChoiceZoom1" parent="UI/ZoomArea/HBoxContainer" instance=ExtResource("9_j6ttb")]
 unique_name_in_owner = true
 layout_mode = 2
 toggleable = true
 titleLocId = "loadout.zoom1"
 
-[node name="LoadoutChoiceZoom2" parent="UI/ZoomArea/HBoxContainer" instance=ExtResource("9_jddxa")]
+[node name="LoadoutChoiceZoom2" parent="UI/ZoomArea/HBoxContainer" instance=ExtResource("9_j6ttb")]
 unique_name_in_owner = true
 layout_mode = 2
 toggleable = true
@@ -906,9 +911,9 @@ titleLocId = "loadout.zoom2"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Tween" parent="." instance=ExtResource("5_i45ha")]
+[node name="Tween" parent="." instance=ExtResource("5_jfao1")]
 
-[node name="EffectHandler" parent="." instance=ExtResource("21_e587k")]
+[node name="EffectHandler" parent="." instance=ExtResource("21_v5q8t")]
 
 [connection signal="body_entered" from="DropDeleter" to="." method="_on_drop_deleter_body_entered"]
 [connection signal="select" from="UI/BlockStartRun/StartRunChoice" to="." method="_on_StartRunChoice_select"]

@@ -133,7 +133,6 @@ func addDrop(drop):
 		return
 			
 	add_child(drop)	
-	drop.apply_central_impulse(Vector2(0, 40).rotated(randf() * TAU))	
 	Style.init(drop)
 	
 

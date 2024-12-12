@@ -43,7 +43,7 @@ func propertyChanged(property:String, oldValue, newValue):
 	Data.listen(self, "game.over")
 	match property:
 		"game.over":
-			if Level and Level.dome != null and Data.ofOr("game.over","") == "won" and Level.loadout.modeId == "coresaver":
+			if Level and Level.dome != null and Data.ofOr("game.over","") == "won" and Level.mode.name == "Coresaver":
 				var keeperId = Level.loadout.keepers.front().keeperId
 				var mapsize = Level.loadout.modeConfig.get(CONST.MODE_CONFIG_MAP_ARCHETYPE, "")
 				match Level.loadout.difficulty:
@@ -56,7 +56,7 @@ func propertyChanged(property:String, oldValue, newValue):
 					2 :
 						save_dict[saver_progress_coresaver_id][keeperId][Level.domeId()][mapsize] = 4
 				save_data()
-			elif Level and Level.dome != null and Data.ofOr("game.over","") == "won" and Level.loadout.modeId == "relichunt":
+			elif Level and Level.dome != null and Data.ofOr("game.over","") == "won" and Level.mode.name == "Relichunt":
 				var keeperId = Level.loadout.keepers.front().keeperId
 				var mapsize = Level.loadout.modeConfig.get(CONST.MODE_CONFIG_MAP_ARCHETYPE, "")
 				match Level.loadout.difficulty:

@@ -41,7 +41,7 @@ func _ready():
 	add_child(custom_achievements)
 		
 func modInit():	
-	var new_stage = load("res://mods-unpacked/POModder-Dependency/stages/MultiplayerloadoutModStage.tscn")
+	var new_stage = load("res://mods-unpacked/POModder-Dependency/stages/MultiplayerloadoutStage.tscn")
 	new_stage.take_over_path("res://stages/loadout/multiplayerloadoutstage.tscn")
 	
 	var tile = load("res://mods-unpacked/POModder-Dependency/replacing_files/Tile.tscn")

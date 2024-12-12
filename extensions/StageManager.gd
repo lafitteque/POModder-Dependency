@@ -6,7 +6,7 @@ var saver
 
 func startStage(stageName:String, data:Array=[], tabula:bool = true):
 	if stageName == "stages/loadout/multiplayerloadout":
-		stageName = "mods-unpacked/POModder-Dependency/stages/MultiplayerloadoutMod"
+		stageName = "mods-unpacked/POModder-Dependency/stages/Multiplayerloadout"
 	super(stageName, data, tabula)
 	
 func _addNewStage():
@@ -17,4 +17,3 @@ func _addNewStage():
 	stage = StageManager.currentStage
 	saver.change_stage()
 	custom_achievements_manager.change_stage(stage.name)
-	

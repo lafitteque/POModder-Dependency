@@ -84,7 +84,8 @@ var generation_data = {
 var chaos_effects = ["gravity" , "attractor",\
 				 "earthquake", "smaller_drops",\
 				 "bigger_drops", "deficit" , "jackpot",\
-				"wave_sooner", "wave_later"]
+				"wave_sooner", "wave_later",
+				"speed", "slow"]
 				
 				
 const rate_list = [0 , 0.5 , 1.0 , 3.0 , 7.0 , 10.0 , 25.0 , 50.0 , 75.0 ]

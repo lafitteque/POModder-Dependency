@@ -48,12 +48,12 @@ func setType(type:String):
 	health = max_health 
 	
 	
-func customInitResourceSprite(v : Vector2, h_frames = 5 , v_frames = 2, path : String = "res://mods-unpacked/POModder-AllYouCanMine/images/mod_resource_sheet.png"):
+func customInitResourceSprite(v : Vector2, h_frames = 4 , v_frames = 2, path : String = "res://mods-unpacked/POModder-AllYouCanMine/images/mod_resource_sheet.png"):
 	res_sprite.hframes = h_frames
 	res_sprite.vframes = v_frames
 	res_sprite.texture = load(path)
 	res_sprite.set_frame_coords(v)
-	Style.init(self)
+	Style.init(res_sprite)
 	
 func hit(dir:Vector2, dmg:float):
 	for mod in tile_mods :
