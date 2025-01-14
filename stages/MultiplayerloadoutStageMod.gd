@@ -323,6 +323,8 @@ func pyromaniac_remove():
 func gameModeSelected(id:String):
 	saver.save_dict["game_mode_loadout"] = id
 	saver.save_data()
+	
+	Data.apply("loadout.modeid",id)
 	if ensureDelayBetweenMajorActions():
 		return
 		

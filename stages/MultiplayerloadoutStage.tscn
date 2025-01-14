@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" path="res://gui/buttons/Action.tscn" id="6_b1bi1"]
 [ext_resource type="LabelSettings" path="res://gui/fontsettings/ActionHintFontSettings.tres" id="7_6ck30"]
 [ext_resource type="LabelSettings" path="res://gui/fontsettings/LargeFontSettings.tres" id="8_3dwao"]
-[ext_resource type="PackedScene" uid="uid://bbti6oixf0gfh" path="res://stages/loadout/LoadoutChoice.tscn" id="9_j6ttb"]
+[ext_resource type="PackedScene" uid="uid://b2vc3l00w7ipb" path="res://stages/loadout/LoadoutChoice.tscn" id="9_j6ttb"]
 [ext_resource type="Script" path="res://stages/loadout/ChoiceHintContainer.gd" id="10_8c58w"]
 [ext_resource type="LabelSettings" path="res://gui/fontsettings/NormalFontSettings.tres" id="11_u30tl"]
 [ext_resource type="Theme" path="res://gui/theme.tres" id="12_47yj4"]
@@ -17,7 +17,7 @@
 [ext_resource type="LabelSettings" path="res://gui/fontsettings/VeryLargeFontSettings.tres" id="15_36jbh"]
 [ext_resource type="FontVariation" path="res://gui/fonts/FontLarge.tres" id="16_ob4gb"]
 [ext_resource type="Script" path="res://stages/loadout/ModifiersBox.gd" id="17_ijk4f"]
-[ext_resource type="PackedScene" uid="uid://dbyykile8w35n" path="res://stages/loadout/AssignmentDisplay.tscn" id="18_fv5cf"]
+[ext_resource type="PackedScene" path="res://stages/loadout/AssignmentDisplay.tscn" id="18_fv5cf"]
 [ext_resource type="Script" path="res://stages/loadout/AssignmentLeaderboard.gd" id="19_0h4eo"]
 [ext_resource type="Texture2D" uid="uid://b6g0mx6jboumy" path="res://content/icons/badge1.png" id="20_ftu8x"]
 [ext_resource type="PackedScene" path="res://systems/audio/EffectHandler.tscn" id="21_v5q8t"]
@@ -130,7 +130,7 @@ position = Vector2(-9, -436)
 shape = SubResource("3")
 
 [node name="CollisionShape4" type="CollisionShape2D" parent="Camera/StaticBody2D"]
-position = Vector2(-21, 374)
+position = Vector2(-41, 367)
 shape = SubResource("3")
 
 [node name="TileDetectorLeft" type="Area2D" parent="Camera"]

@@ -95,7 +95,6 @@ const probability_list = [0 , 0.0005 , 0.001 , 0.005 , 0.01 , 0.05 , 0.10 , 0.25
 func get_endings():
 	var endings = ["glass" , "heavy_rock", "secret"]
 	endings.remove_at(randi() % 3)
-	endings = ["glass" , "heavy_rock"]
 	return endings
 
 func update_generation_data(a : MapArchetype):
