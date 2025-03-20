@@ -19,6 +19,7 @@ func deserialize(chain: ModLoaderHookChain, data: Dictionary):
 			set_meta("destructable", true)
 	
 func setType(chain: ModLoaderHookChain, type:String):
+	print("Set Type debug success")
 	var data_mod = chain.reference_object.get_node("/root/ModLoader/POModder-Dependency").data_mod
 	var tile_mods = chain.reference_object.get_tree().get_nodes_in_group("tile-mods")
 	var main_node : Node = chain.reference_object

@@ -2,6 +2,7 @@ extends Node
 
 
 func revealTile(chain: ModLoaderHookChain, coord:Vector2):
+	print("reveal Tile debug success")
 	var main_node = chain.reference_object
 	var data_mod = main_node.get_node("/root/ModLoader/POModder-Dependency").data_mod
 	var map_mods = main_node.get_tree().get_nodes_in_group("map-mods")
@@ -11,8 +12,7 @@ func revealTile(chain: ModLoaderHookChain, coord:Vector2):
 	modifyTileWhenRevealed(main_node, coord, typeId)
 	typeId = main_node.tileData.get_resource(coord.x, coord.y)
 	
-	
-	if not(  typeId in data_mod.TILE_ID_TO_STRING_MAP.keys().slice(11) ):
+	if not(  typeId in data_mod.TILE_ID_TO_STRING_MAP.keys().slice(10) ):
 		chain.execute_next([coord])
 		return
 		
