@@ -25,6 +25,7 @@ func _init():
 	
 	ModLoaderMod.install_script_extension(ext_dir + "StageManager.gd")
 	
+	ModLoaderMod.install_script_hooks("res://content/map/tile/Tile.gd", "res://mods-unpacked/POModder-Dependency/replacing_files/Tile.gd")
 	
 func _ready():
 	ModLoaderLog.info("Done", MYMODNAME_LOG)
@@ -44,7 +45,6 @@ func modInit():
 	var new_stage = load("res://mods-unpacked/POModder-Dependency/stages/MultiplayerloadoutStage.tscn")
 	new_stage.take_over_path("res://stages/loadout/multiplayerloadoutstage.tscn")
 	
-	var tile = load("res://mods-unpacked/POModder-Dependency/replacing_files/Tile.tscn")
-	tile.take_over_path("res://content/map/tile/Tile.tscn")
+	
 
 

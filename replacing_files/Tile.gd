@@ -1,32 +1,31 @@
-extends Tile 
+extends Object
 
-var detonator = null #QLafitte Added
-var destroyer = null
-var chaos = null
-
-var mod_info = {}
-
-@onready var data_mod = get_node("/root/ModLoader/POModder-Dependency").data_mod
-@onready var tile_mods = get_tree().get_nodes_in_group("tile-mods")
-
-
-func serialize():
-	super()
+func serialize(chain: ModLoaderHookChain):
+	var main_node : Node = chain.reference_object
+	var tile_mods = chain.reference_object.get_tree().get_nodes_in_group("tile-mods")
+	chain.execute_next()
 	for mod in tile_mods :
-		mod.serialize(self)
+		mod.serialize(main_node)
 	
-func deserialize(data: Dictionary):
-	super(data)
+func deserialize(chain: ModLoaderHookChain, data: Dictionary):
+	var main_node : Node = chain.reference_object
+	var tile_mods = chain.reference_object.get_tree().get_nodes_in_group("tile-mods")
+	
+	chain.execute_next([data])
 	
 	for mod in tile_mods :
-		mod.deserialize(self)
-		if mod.set_meta_destructable(self,type) :
+		mod.deserialize(main_node)
+		if mod.set_meta_destructable(main_node,main_node.type) :
 			set_meta("destructable", true)
 	
-func setType(type:String):
-	super.setType(type)
+func setType(chain: ModLoaderHookChain, type:String):
+	var data_mod = chain.reference_object.get_node("/root/ModLoader/POModder-Dependency").data_mod
+	var tile_mods = chain.reference_object.get_tree().get_nodes_in_group("tile-mods")
+	var main_node : Node = chain.reference_object
+	
+	chain.execute_next([type])
 	for mod in tile_mods :
-		if mod.set_meta_destructable(self,type) :
+		if mod.set_meta_destructable(main_node,type) :
 			set_meta("destructable", true)
 			
 	if type == "chaos":
@@ -37,30 +36,25 @@ func setType(type:String):
 	var baseHealth:float = Data.of("map.tileBaseHealth")
 	
 	for mod in tile_mods :
-		baseHealth = mod.setType(self,type, baseHealth)
-		if mod.set_meta_destructable(self,type) :
+		baseHealth = mod.setType(main_node,type, baseHealth)
+		if mod.set_meta_destructable(main_node,type) :
 			set_meta("destructable", true)
 			
-	var healthMultiplier = hardnessMultiplier
-	healthMultiplier *= (pow(Data.of("map.tileHealthMultiplierPerLayer"), layer))
+	var healthMultiplier = main_node.hardnessMultiplier
+	healthMultiplier *= (pow(Data.of("map.tileHealthMultiplierPerLayer"), main_node.layer))
 	
-	max_health = max(1, round(healthMultiplier * baseHealth))
-	health = max_health 
+	main_node.max_health = max(1, round(healthMultiplier * baseHealth))
+	main_node.health = main_node.max_health 
+
 	
+func hit(chain: ModLoaderHookChain, dir:Vector2, dmg:float):
+	var tile_mods = chain.reference_object.get_tree().get_nodes_in_group("tile-mods")
+	var main_node : Node = chain.reference_object
 	
-func customInitResourceSprite(v : Vector2, h_frames = 4 , v_frames = 2, path : String = "res://mods-unpacked/POModder-AllYouCanMine/images/mod_resource_sheet.png"):
-	res_sprite.hframes = h_frames
-	res_sprite.vframes = v_frames
-	res_sprite.texture = load(path)
-	res_sprite.set_frame_coords(v)
-	Style.init(res_sprite)
-	
-func hit(dir:Vector2, dmg:float):
 	for mod in tile_mods :
-		mod.hit(self,type,dir,dmg)
+		mod.hit(main_node,main_node.type, dir, dmg) 
 	
-	if health - dmg <= 0:
+	if main_node.health - dmg <= 0:
 		for mod in tile_mods :
-			mod.tileBreak(self,type,dir,dmg)
-			
-	super.hit(dir,dmg)
+			mod.tileBreak(main_node,main_node.type, dir, dmg)
+	chain.execute_next([dir,dmg])

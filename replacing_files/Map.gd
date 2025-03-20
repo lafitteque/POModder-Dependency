@@ -33,7 +33,7 @@ func revealTile(coord:Vector2):
 	if tiles.has(coord):
 		return
 	
-	var tile = load("res://mods-unpacked/POModder-Dependency/replacing_files/Tile.tscn").instantiate()
+	var tile = load("res://content/map/tile/Tile.tscn").instantiate()
 	var biomeId:int = tileData.get_biome(coord.x, coord.y)
 	tile.layer = biomeId
 	tile.biome = biomes[tile.layer]
