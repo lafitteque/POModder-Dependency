@@ -562,7 +562,21 @@ func update_modif():
 		
 func modifierSelected(toggled: bool, modif_name):
 	var Mbox = %ModifiersBox
+	
+	# Manage incompatibilities
+	
+	var incompatible = [
+		["worldmodifierpyromaniac", "worldmodifierautonomous"],
+		["worldmodifieraprilfools", "worldmodifiersmalldrops", "worldmodifierbigdrops"]
+	]
+	
+	for l in incompatible:
+		if modif_name in l:
+			for modif in l :
+				Mbox.modifierSelected(false, modif)
 	Mbox.modifierSelected(toggled, modif_name)
+	
+	
 	
 func difficultySelected(d):
 	resetPersistMetaCooldown()
