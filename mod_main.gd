@@ -28,7 +28,6 @@ func _init():
 	var new_stage = load("res://mods-unpacked/POModder-Dependency/stages/MultiplayerloadoutStage.tscn")
 	new_stage.take_over_path("res://stages/loadout/multiplayerloadoutstage.tscn")
 	
-func modInit():
 	ModLoaderMod.install_script_hooks("res://content/map/tile/Tile.gd", "res://mods-unpacked/POModder-Dependency/replacing_files/Tile.gd")
 	ModLoaderMod.install_script_hooks("res://content/map/Map.gd", "res://mods-unpacked/POModder-Dependency/replacing_files/Map.gd")
 	

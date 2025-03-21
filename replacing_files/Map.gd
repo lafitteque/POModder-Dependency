@@ -2,14 +2,17 @@ extends Node
 
 
 func revealTile(chain: ModLoaderHookChain, coord:Vector2):
-	print("reveal Tile debug success")
+	#print("reveal Tile debug success")
 	var main_node = chain.reference_object
 	var data_mod = main_node.get_node("/root/ModLoader/POModder-Dependency").data_mod
 	var map_mods = main_node.get_tree().get_nodes_in_group("map-mods")
 
 	var typeId:int = main_node.tileData.get_resource(coord.x, coord.y)
 	var invalids := []
-	modifyTileWhenRevealed(main_node, coord, typeId)
+	
+	for mod in map_mods:
+		mod.modmodifyTileWhenRevealed(main_node,coord,typeId)
+		
 	typeId = main_node.tileData.get_resource(coord.x, coord.y)
 	
 	if not(  typeId in data_mod.TILE_ID_TO_STRING_MAP.keys().slice(10) ):
@@ -69,12 +72,7 @@ func revealTile(chain: ModLoaderHookChain, coord:Vector2):
 
 	
 	
-func modifyTileWhenRevealed(main_node, coord,typeId):
-	var data_mod = main_node.get_node("/root/ModLoader/POModder-Dependency").data_mod
-	var map_mods = main_node.get_tree().get_nodes_in_group("map-mods")
-	
-	for mod in map_mods:
-		mod.modmodifyTileWhenRevealed(main_node,coord,typeId)
+
 	
 	
 ### Not compatible with other mods (how to do?)
@@ -140,6 +138,8 @@ func addDrop(chain: ModLoaderHookChain, drop):
 	main_node.add_child(drop)	
 	Style.init(drop)
 	
+	if false :
+		chain.execute_next()
 
 
 func destroyTile(chain: ModLoaderHookChain, tile, withDropsAndSound := true):
@@ -239,8 +239,9 @@ func generateCaves(chain: ModLoaderHookChain, minDistanceToCenter := 10):
 				break
 			else:
 				cave.queue_free()
-
+		
 	for mod in map_mods:
 		mod.afterCaveGeneration(main_node, rand)			
 			
-			
+	if false :
+		chain.execute_next()
