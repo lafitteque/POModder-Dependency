@@ -31,6 +31,8 @@ func _init():
 	ModLoaderMod.install_script_hooks("res://content/map/tile/Tile.gd", "res://mods-unpacked/POModder-Dependency/replacing_files/Tile.gd")
 	ModLoaderMod.install_script_hooks("res://content/map/Map.gd", "res://mods-unpacked/POModder-Dependency/replacing_files/Map.gd")
 	
+func modInit():
+	pass
 	
 func _ready():
 	ModLoaderLog.info("Done", MYMODNAME_LOG)

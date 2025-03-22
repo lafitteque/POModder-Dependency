@@ -72,9 +72,6 @@ func revealTile(chain: ModLoaderHookChain, coord:Vector2):
 
 	
 	
-
-	
-	
 ### Not compatible with other mods (how to do?)
 func addDrop(chain: ModLoaderHookChain, drop):
 	var main_node = chain.reference_object
