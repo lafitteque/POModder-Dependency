@@ -1,19 +1,19 @@
 [gd_scene load_steps=31 format=3 uid="uid://ba0ww61h080jf"]
 
 [ext_resource type="Script" path="res://mods-unpacked/POModder-Dependency/stages/MultiplayerloadoutStageMod.gd" id="1_rlof7"]
-[ext_resource type="PackedScene" path="res://content/map/Map.tscn" id="2_keruu"]
+[ext_resource type="PackedScene" uid="uid://7jolb2hyo368" path="res://content/map/Map.tscn" id="2_keruu"]
 [ext_resource type="PackedScene" path="res://content/worlds/world1/World1.tscn" id="3_uyr7m"]
 [ext_resource type="Script" path="res://stages/loadout/MultiplayerLoadoutCamera.gd" id="4_m8117"]
 [ext_resource type="PackedScene" path="res://systems/deprecatedtween/DeprecatedTween.tscn" id="5_jfao1"]
 [ext_resource type="PackedScene" path="res://gui/buttons/Action.tscn" id="6_b1bi1"]
 [ext_resource type="LabelSettings" path="res://gui/fontsettings/ActionHintFontSettings.tres" id="7_6ck30"]
 [ext_resource type="LabelSettings" path="res://gui/fontsettings/LargeFontSettings.tres" id="8_3dwao"]
-[ext_resource type="PackedScene" uid="uid://b2vc3l00w7ipb" path="res://stages/loadout/LoadoutChoice.tscn" id="9_j6ttb"]
+[ext_resource type="PackedScene" uid="uid://clwy6knopntfa" path="res://stages/loadout/LoadoutChoice.tscn" id="9_j6ttb"]
 [ext_resource type="Script" path="res://stages/loadout/ChoiceHintContainer.gd" id="10_8c58w"]
 [ext_resource type="LabelSettings" path="res://gui/fontsettings/NormalFontSettings.tres" id="11_u30tl"]
 [ext_resource type="Theme" path="res://gui/theme.tres" id="12_47yj4"]
 [ext_resource type="FontVariation" path="res://gui/fonts/FontHeading.tres" id="13_oymhn"]
-[ext_resource type="LabelSettings" path="res://gui/fontsettings/HeadingFontSettings.tres" id="14_kts5u"]
+[ext_resource type="LabelSettings" uid="uid://c4kr8k5vslhx2" path="res://gui/fontsettings/HeadingFontSettings.tres" id="14_kts5u"]
 [ext_resource type="LabelSettings" path="res://gui/fontsettings/VeryLargeFontSettings.tres" id="15_36jbh"]
 [ext_resource type="FontVariation" path="res://gui/fonts/FontLarge.tres" id="16_ob4gb"]
 [ext_resource type="Script" path="res://stages/loadout/ModifiersBox.gd" id="17_ijk4f"]
@@ -293,6 +293,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_constants/separation = 60
 alignment = 1
+
+[node name="Arrows" type="HBoxContainer" parent="UI/BlockKeeper"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 24
 
 [node name="BlockGameMode" type="VBoxContainer" parent="UI"]
 layout_mode = 0
