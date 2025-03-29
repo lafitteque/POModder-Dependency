@@ -3,9 +3,10 @@ extends Object
 func serialize(chain: ModLoaderHookChain):
 	var main_node : Node = chain.reference_object
 	var tile_mods = chain.reference_object.get_tree().get_nodes_in_group("tile-mods")
-	chain.execute_next()
 	for mod in tile_mods :
 		mod.serialize(main_node)
+		
+	return chain.execute_next()
 	
 func deserialize(chain: ModLoaderHookChain, data: Dictionary):
 	var main_node : Node = chain.reference_object

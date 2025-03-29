@@ -20,6 +20,9 @@ var current_modif_page = 1
 var modif_per_page = 9
 @onready var max_page_modif : int = floor( (GameWorld.unlockedRunModifiers.size() - 1 )/modif_per_page) + 1
 
+var current_keeper_page = 1
+var keeper_per_page = 2
+@onready var max_page_keeper : int = floor( (Data.loadoutKeepers.size() - 1 )/keeper_per_page) + 1
 
 var current_achievement_page = 1
 var achievement_per_page = 24
@@ -107,6 +110,8 @@ func fillGameModes():
 	
 	update_assignments()
 	
+	update_keepers()
+	
 	var arrow = preload("res://mods-unpacked/POModder-Dependency/stages/page_choice.tscn")
 	## Create arrows for assignment pages
 	if max_page_assignment > 1:
@@ -176,12 +181,24 @@ func fillGameModes():
 		left_arrow_modif.find_child("Icon",true,false).flip_h = true
 		left_arrow_modif.connect("select", previous_page_modif)
 		arrow_containers_modif.add_child(left_arrow_modif)
-		Style.init(arrow_containers_modif)
 		
 		var right_arrow_modif = arrow.instantiate()
 		arrow_containers_modif.add_child(right_arrow_modif)
 		right_arrow_modif.connect("select", next_page_modif)
-		Style.init(right_arrow_modif)
+		Style.init(arrow_containers_modif)
+	
+	if max_page_keeper > 1:
+		var arrow_containers_keeper = $UI/BlockKeeper/Arrows
+
+		var left_arrow_keeper = arrow.instantiate()
+		left_arrow_keeper.find_child("Icon",true,false).flip_h = true
+		left_arrow_keeper.connect("select", previous_page_keeper)
+		arrow_containers_keeper.add_child(left_arrow_keeper)
+			
+		var right_arrow_keeper = arrow.instantiate()
+		arrow_containers_keeper.add_child(right_arrow_keeper)
+		right_arrow_keeper.connect("select", next_page_keeper)
+		Style.init(right_arrow_keeper)
 		
 	for mod in mod_gamemodes:
 		mod.fillGameModes(self)
@@ -625,7 +642,58 @@ func startRun():
 	StageManager.startStage("stages/landing/landing", [startData])
 
 
-
+func update_keepers():
+	max_page_keeper = floor( (Data.loadoutKeepers.size() - 1 )/keeper_per_page) + 1
+	
+	var kc = find_child("KeeperContainers")
+	
+	for child in kc.get_children():
+		child.queue_free()
+		
+	for id in Data.loadoutKeepers.slice((current_keeper_page-1)*keeper_per_page,current_keeper_page*keeper_per_page):
+		var box = VBoxContainer.new()
+		box.set("theme_override_constants/separation", 10)
+		var label = Label.new()
+		label.label_settings = preload("res://gui/fontsettings/LargeFontSettings.tres")
+		label.text = tr("upgrades." + id + ".title")
+		label.horizontal_alignment = HorizontalAlignment.HORIZONTAL_ALIGNMENT_CENTER
+		label.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
+		box.add_child(label)
+		label = Label.new()
+		if GameWorld.isUnlocked(id):
+			label.text = tr("upgrades." + id + ".desc")
+		else:
+			label.text = tr("unlock.generic")
+		label.horizontal_alignment = HorizontalAlignment.HORIZONTAL_ALIGNMENT_CENTER
+		label.autowrap_mode = TextServer.AutowrapMode.AUTOWRAP_WORD_SMART
+		label.label_settings = preload("res://gui/fontsettings/SmallFontSettings.tres")
+		label.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
+		box.add_child(label)
+		
+		var grid := GridContainer.new()
+		box.add_child(grid)
+		
+		var skins = GameWorld.unlockedSkins.get(id, [])
+		if not skins.has("skin0"):
+			skins.insert(0, "skin0")
+		for skinId in skins:
+			var skinSpritePath:String = "res://content/keeper/" + id + "/spriteframes-" + skinId + ".tres"
+			if not ResourceLoader.exists(skinSpritePath):
+				continue
+			var image = load("res://content/icons/loadout_" + id + "-" + skinId + ".png")
+			var e = preload("res://stages/loadout/KeeperChoice.tscn").instantiate()
+			e.connect("select", changeKeeper.bind(id + "-" + skinId))
+			e.setChoice(id + "-" + skinId, image)
+			e.set_enabled(GameWorld.isUnlocked(id))
+			grid.add_child(e)
+		
+		grid.columns = 2
+		if grid.get_child_count() > 0:
+			kc.add_child(box)
+		else:
+			box.free()
+			
+			
 func next_page_assignment():
 	current_assignment_page = min(max_page_assignment,current_assignment_page+1)
 	update_assignments()
@@ -654,6 +722,8 @@ func previous_page_custom_achievement():
 	current_custom_achievement_page = max(1,current_custom_achievement_page-1)
 	update_custom_achievements()
 
+
+
 func next_page_achievement():
 	current_achievement_page = min(max_page_achievement,current_custom_achievement_page+1)
 	update_achievements()
@@ -662,6 +732,8 @@ func previous_page_achievement():
 	current_achievement_page = max(1,current_achievement_page-1)
 	update_achievements()
 	
+	
+	
 func next_page_modif():
 	current_modif_page = min(max_page_modif,current_modif_page+1)
 	update_modif()
@@ -669,3 +741,32 @@ func next_page_modif():
 func previous_page_modif():
 	current_modif_page = max(1,current_modif_page-1)
 	update_modif()
+	
+	
+
+	
+func next_page_keeper():
+	current_keeper_page = min(max_page_keeper,current_keeper_page+1)
+	update_keepers()
+	
+func previous_page_keeper():
+	current_keeper_page = max(1,current_keeper_page-1)
+	update_keepers()
+	
+	
+
+func updatePlayerIds():
+	super()
+	var keepers := get_tree().get_nodes_in_group("keeper")
+	var maxId = 0
+	for keeper in keepers:
+		if keeper.playerId != "":
+			maxId = max( maxId , (keeper.playerId.split("player"))[0].to_int())
+	for keeper in keepers:
+		if keeper.playerId == "":
+			maxId += 1
+			keeper.playerId = "player" + str(maxId)
+		if keeper.techId == "excavator":
+			Data.apply(keeper.playerId+".excavator.maxUpSpeed", 150)
+			
+			
