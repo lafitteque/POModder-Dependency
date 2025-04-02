@@ -181,7 +181,7 @@ collision_layer = 0
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropDeleter"]
-position = Vector2(-818, 17)
+position = Vector2(-954, 865)
 shape = SubResource("9")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="DropDeleter"]

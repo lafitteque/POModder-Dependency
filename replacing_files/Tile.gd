@@ -25,11 +25,19 @@ func setType(chain: ModLoaderHookChain, type:String):
 	var tile_mods = chain.reference_object.get_tree().get_nodes_in_group("tile-mods")
 	var main_node : Node = chain.reference_object
 		
+	var tile_hardness = main_node.hardness
+	
+	chain.execute_next([type])
+	
+	main_node.hardness = tile_hardness # don't let vanilla impose its values 
+	
 	var baseHealth:float = Data.of("map.tileBaseHealth")
 	
+	var modTile = false
 	for mod in tile_mods :
 		baseHealth = mod.setType(main_node,type, baseHealth)
 		if mod.set_meta_destructable(main_node,type) :
+			modTile = true
 			main_node.set_meta("destructable", true)
 			
 	var healthMultiplier = main_node.hardnessMultiplier
@@ -38,7 +46,6 @@ func setType(chain: ModLoaderHookChain, type:String):
 	main_node.max_health = max(1, round(healthMultiplier * baseHealth))
 	main_node.health = main_node.max_health 
 
-	chain.execute_next([type])
 	
 	
 func hit(chain: ModLoaderHookChain, dir:Vector2, dmg:float):

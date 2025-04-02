@@ -772,15 +772,8 @@ func previous_page_keeper():
 func updatePlayerIds():
 	super()
 	var keepers := get_tree().get_nodes_in_group("keeper")
-	var maxId = 0
 	for keeper in keepers:
-		if keeper.playerId != "":
-			maxId = max( maxId , (keeper.playerId.split("player"))[0].to_int())
-	for keeper in keepers:
-		if keeper.playerId == "":
-			maxId += 1
-			keeper.playerId = "player" + str(maxId)
 		if keeper.techId == "excavator":
 			Data.apply(keeper.playerId+".excavator.maxUpSpeed", 150)
-			
-			
+			Data.apply(keeper.playerId+".excavator.maxSpeed", 150)
+		
