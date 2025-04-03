@@ -8,7 +8,10 @@ func startStage(stageName:String, data:Array=[], tabula:bool = true):
 	if stageName == "stages/loadout/multiplayerloadout":
 		stageName = "mods-unpacked/POModder-Dependency/stages/Multiplayerloadout"
 	super(stageName, data, tabula)
-	
+
+	if not stageName.ends_with("levelstage") :
+		Engine.time_scale = 1
+		
 func _addNewStage():
 	custom_achievements_manager = get_node("/root/ModLoader/POModder-Dependency").custom_achievements
 	saver = get_node("/root/ModLoader/POModder-Dependency").saver
