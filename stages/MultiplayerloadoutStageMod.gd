@@ -773,6 +773,9 @@ func updatePlayerIds():
 	super()
 	var keepers := get_tree().get_nodes_in_group("keeper")
 	for keeper in keepers:
+		if keeper.techId == "spelunker":
+			keeper.playerId = "player1"
+			Data.apply(keeper.playerId + ".spelunker.maxSpeed", 180)
 		if keeper.techId == "excavator":
 			Data.apply(keeper.playerId+".excavator.maxUpSpeed", 150)
 			Data.apply(keeper.playerId+".excavator.maxSpeed", 150)
